@@ -1,0 +1,4 @@
+model_meshfile = /glade/p/cesmdata/cseg/inputdata/share/meshes/gx1v7_151008_ESMFmesh.nc
+model_maskfile = /glade/p/cesmdata/cseg/inputdata/share/meshes/gx1v7_151008_ESMFmesh.nc
+mesh = /glade/p/cesmdata/cseg/inputdata/ocn/docn7/SOM/pop_frc.1x1d.SCRIP.030620_ESMFmesh.nc
+file1 = /glade/p/cesmdata/cseg/inputdata/ocn/docn7/SOM/pop_frc.1x1d.090130.nc

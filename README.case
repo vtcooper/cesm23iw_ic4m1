@@ -1,0 +1,44 @@
+2022-01-13 09:28:43: /glade/u/home/vcooper/devcesm/cesm_nuopc/cime/scripts/create_newcase --case cesm23iw_ic4m1 --res TL319_g17 --compset 2000_DATM%JRA_SLND_CICE_DOCN%SOM_DROF%IAF_SGLC_WW3_SESP --driver nuopc --mach cheyenne --run-unsupported --project UWAS0070 --workflow default
+ ---------------------------------------------------
+2022-01-13 09:28:43: Compset longname is 2000_DATM%JRA_SLND_CICE_DOCN%SOM_DROF%IAF_SGLC_WW3_SESP
+ ---------------------------------------------------
+2022-01-13 09:28:43: Compset specification file is /glade/u/home/vcooper/devcesm/cesm_nuopc/components/cice//cime_config/config_compsets.xml
+ ---------------------------------------------------
+2022-01-13 09:28:43: Pes     specification file is /glade/u/home/vcooper/devcesm/cesm_nuopc/components/cice//cime_config/config_pes.xml
+ ---------------------------------------------------
+2022-01-13 09:28:43: Forcing is 1972-2004
+ ---------------------------------------------------
+2022-01-13 09:28:43: Using 1 coupler instances
+ ---------------------------------------------------
+2022-01-13 09:28:43: Component ATM is  Data driven ATM interannual JRA55 forcing
+ ---------------------------------------------------
+2022-01-13 09:28:43: ATM_GRID is TL319
+ ---------------------------------------------------
+2022-01-13 09:28:43: Component LND is Stub land component
+ ---------------------------------------------------
+2022-01-13 09:28:43: LND_GRID is null
+ ---------------------------------------------------
+2022-01-13 09:28:43: Component ICE is Sea ICE (cice) model version 5
+ ---------------------------------------------------
+2022-01-13 09:28:43: ICE_GRID is gx1v7
+ ---------------------------------------------------
+2022-01-13 09:28:43: Component OCN is DOCN   slab ocean mode
+ ---------------------------------------------------
+2022-01-13 09:28:43: OCN_GRID is gx1v7
+ ---------------------------------------------------
+2022-01-13 09:28:43: Component ROF is Data runoff modelCOREv2 interannual year forcing:
+ ---------------------------------------------------
+2022-01-13 09:28:43: ROF_GRID is JRA025
+ ---------------------------------------------------
+2022-01-13 09:28:43: Component GLC is Stub glacier (land ice) component
+ ---------------------------------------------------
+2022-01-13 09:28:43: GLC_GRID is null
+ ---------------------------------------------------
+2022-01-13 09:28:43: Component WAV is Wave Watch
+ ---------------------------------------------------
+2022-01-13 09:28:43: WAV_GRID is ww3a
+ ---------------------------------------------------
+2022-01-13 09:28:43: Component ESP is Stub external system processing (ESP) component
+ ---------------------------------------------------
+2022-01-13 09:28:43: ESP_GRID is None
+ ---------------------------------------------------

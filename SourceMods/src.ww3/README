@@ -1,0 +1,24 @@
+Put source mods for the ww3 library in this directory.
+
+WARNING: SourceMods are not kept under version control, and can easily
+become out of date if changes are made to the source code on which they
+are based. We only recommend using SourceMods for small, short-term
+changes that just apply to one or two cases. For larger or longer-term
+changes, including gradual, incremental changes towards a final
+solution, we highly recommend making changes in the main source tree,
+leveraging version control (git or svn).
+
+
+~~~~~~~~~~~~~~~
+VTC notes.
+
+Material code changes are:
+1) subcycling of dt in ice in w3srcemd.F90
+1b)  change of dtmin in wav_comp_nuopc.F90 to permit subcycling
+2) correction to k_i = alpha/2 in w3sic4md.F90 
+
+Trivial changes are:
+-w3wavemd.F90 suppression of CMB write statements
+-w3src4md.F90 no actual changes but here for troubleshooting signal 11
+
+

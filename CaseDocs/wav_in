@@ -1,0 +1,4 @@
+&ww3_inparm
+  initfile = '/glade/scratch/vcooper/cesm23iw_dtice100/run/cesm23iw_dtice100.ww3.r.2018-01-01-00000'
+  outfreq = 1
+/
