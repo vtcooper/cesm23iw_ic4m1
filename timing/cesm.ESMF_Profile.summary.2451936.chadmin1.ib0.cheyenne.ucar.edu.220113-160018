@@ -1,0 +1,982 @@
+********
+IMPORTANT: Large deviations between Connector times on different PETs
+are typically indicators of load imbalance in the system. The following
+Connectors in this profile may indicate a load imbalance:
+	 - [ICE-TO-MED] RunPhase1
+********
+
+Region                                                                  PETs   Count    Mean (s)    Min (s)     Min PET Max (s)     Max PET
+  [ensemble] RunPhase1                                                  144    1        1702.9012   1702.9006   4       1702.9224   0      
+    [ESM0001] RunPhase1                                                 144    1        1702.9008   1702.8998   130     1702.9221   0      
+      [WAV] RunPhase1                                                   144    744      1134.9723   1032.4225   23      1512.4025   142    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    744      0.0674      0.0584      72      0.0816      138    
+        calling NUOPC_GetStateMemberCount                               144    744      0.0108      0.0087      123     0.0146      54     
+        loop over fields                                                144    744      0.0034      0.0031      38      0.0041      142    
+        deal with allocs                                                144    744      0.0012      0.0009      119     0.0015      103    
+      [ATM] RunPhase1                                                   144    744      206.5289    5.3790      142     271.7079    2      
+        (atm_comp_nuopc):(ModelAdvance)                                 144    744      206.4437    5.2884      142     271.6228    2      
+          datm_run                                                      144    744      206.4285    5.2677      142     271.6085    2      
+            DATM_RUN                                                    144    744      206.4275    5.2667      142     271.6077    2      
+              datm_strdata_advance                                      144    744      205.8326    5.0063      142     271.0113    2      
+                datm_strd_adv_total                                     144    744      205.8311    5.0047      142     271.0100    2      
+                  datm_strd_adv_readLBUB                                144    7440     205.3607    4.5334      142     270.6045    2      
+                    datm_readLBUB_UB_readpio                            144    1979     205.3050    4.4787      142     270.5569    2      
+                    datm_readLBUB_fbound                                144    1979     0.0123      0.0096      2       0.0166      126    
+                    datm_readLBUB_setup                                 144    7440     0.0042      0.0037      33      0.0053      126    
+                    datm_readLBUB_filemgt                               144    7440     0.0021      0.0013      32      0.1025      0      
+                  datm_strd_adv_tint                                    144    6696     0.2963      0.2205      0       0.3546      126    
+                  datm_strd_adv_coszen                                  144    744      0.1616      0.1574      134     0.1718      51     
+                    datm_strd_adv_coszenC                               144    744      0.0760      0.0734      33      0.0849      51     
+                    datm_strd_adv_coszenN                               144    247      0.0758      0.0745      96      0.0776      53     
+              datm_datamode                                             144    744      0.5565      0.2203      142     1.3994      0      
+                PIO:createfile                                          144    1        0.1970      0.0000      142     1.1107      0      
+                PIO:closefile                                           144    1        0.0546      0.0000      0       0.0565      40     
+                PIO:put_var1_int                                        144    1012     0.0269      0.0015      142     0.0276      111    
+                PIO:put_vara_1d_int                                     144    980      0.0261      0.0012      142     0.0267      138    
+              datm_dfield_copy                                          144    744      0.0360      0.0278      0       0.0487      126    
+        loop over fields                                                144    744      0.0015      0.0014      26      0.0016      138    
+        deal with allocs                                                144    744      0.0013      0.0012      118     0.0018      54     
+      [ICE] RunPhase1                                                   144    744      166.7129    164.3658    85      168.3144    18     
+        ICE:Total                                                       144    744      166.1814    163.8280    85      167.7925    11     
+          cice_run_total                                                144    744      166.1763    163.8231    85      167.7872    11     
+            ICE:TimeLoop                                                144    744      164.1118    161.9031    85      165.7188    11     
+              ICE:Advection                                             144    2976     75.3591     68.7655     76      77.4199     72     
+              ICE:History                                               144    744      35.7314     35.3202     84      36.1919     142    
+              ICE:Column                                                144    4464     27.1951     23.1363     87      30.9332     76     
+              ICE:Dynamics                                              144    2976     23.4129     21.4163     71      29.1417     49     
+              ICE:Diags                                                 144    1488     0.7659      0.6861      19      1.0398      0      
+              ICE:ReadWrite                                             144    744      0.6043      0.6026      1       0.6060      141    
+              ICE:Waves                                                 144    744      0.3287      0.1441      49      0.8927      39     
+            cice_run_import                                             144    744      1.0625      0.8631      0       1.1199      128    
+              ICE:Cpl-recv                                              144    744      1.0602      0.8610      0       1.1176      128    
+            cice_run_export                                             144    744      0.9368      0.8239      87      1.0443      93     
+              ICE:Cpl-Send                                              144    744      0.9308      0.8195      87      1.0370      93     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    744      0.2285      0.2226      27      0.2375      126    
+        calling NUOPC_GetStateMemberCount                               144    744      0.0206      0.0184      142     0.0223      0      
+        loop over fields                                                144    744      0.0047      0.0035      119     0.0065      139    
+        deal with allocs                                                144    744      0.0015      0.0012      14      0.0020      61     
+      [MED] med_phases_post_ice                                         144    744      101.2114    1.9136      143     169.4931    38     
+        MED:(med_phases_post_ice)                                       144    744      101.0964    1.8027      143     169.3824    38     
+          MED: (med_fraction_set)                                       144    744      100.3830    1.0667      143     168.6814    38     
+            MED: (med_fraction_set) fbfrac(compocn)                     144    744      100.3645    1.0516      143     168.6633    38     
+            MED: (med_fraction_set) fbfrac(compatm)                     144    744      0.0009      0.0008      40      0.0011      126    
+          MED:(med_phases_post_ice) map_ice2wav                         144    744      0.4827      0.4472      9       0.5119      1      
+            MED: (module_MED_map:med_map_field_packed)                  144    744      0.4816      0.4463      9       0.5109      1      
+              MED: (module_MED_map:med_map_field_packed) map            144    744      0.4496      0.4151      9       0.4787      1      
+              MED: (module_MED_map:med_map_field_packed) copy from src  144    744      0.0087      0.0079      58      0.0104      126    
+              MED: (module_MED_map:med_map_field_packed) copy to dest   144    744      0.0078      0.0068      130     0.0090      90     
+          MED:(med_phases_post_ice) map_ice2ocn                         144    744      0.2267      0.1875      93      0.3027      130    
+            MED: (module_MED_map:med_map_field_packed)                  144    744      0.2250      0.1858      93      0.3007      130    
+              MED: (module_MED_map:med_map_field_packed) map            144    744      0.1508      0.1144      93      0.2186      121    
+              MED: (module_MED_map:med_map_field_packed) copy from src  144    744      0.0298      0.0252      43      0.0370      132    
+              MED: (module_MED_map:med_map_field_packed) copy to dest   144    744      0.0236      0.0213      14      0.0273      89     
+      [ICE-TO-MED] RunPhase1                                            144    744      79.0162     0.3470      0       203.3480    112    
+      [MED] med_phases_post_atm                                         144    744      2.3070      2.0682      138     2.4234      23     
+        MED:(med_phases_post_atm)                                       144    744      2.2004      1.9524      138     2.3238      23     
+          MED:(med_phases_post_atm) map_atm2ice                         144    744      1.2453      0.9329      137     1.4176      2      
+            MED: (module_MED_map:med_map_field_packed)                  144    744      1.2435      0.9311      137     1.4162      2      
+              MED: (module_MED_map:med_map_field_packed) map            144    1488     0.6053      0.3303      137     0.8077      2      
+              MED: (module_MED_map:med_map_field_packed) copy from src  144    1488     0.0914      0.0667      5       0.1125      127    
+              MED: (module_MED_map:med_map_field_packed) copy to dest   144    1488     0.0449      0.0353      0       0.0547      88     
+          MED:(med_phases_post_atm) map_atm2ocn                         144    744      0.9516      0.7922      2       1.0846      29     
+            MED: (module_MED_map:med_map_field_packed)                  144    744      0.9496      0.7906      2       1.0825      29     
+              MED: (module_MED_map:med_map_field_packed) map            144    1488     0.2911      0.1475      2       0.4233      42     
+              MED: (module_MED_map:med_map_field_packed) copy from src  144    1488     0.0837      0.0684      112     0.1397      18     
+              MED: (module_MED_map:med_map_field_packed) copy to dest   144    1488     0.0483      0.0378      0       0.0600      136    
+        loop over fields                                                144    744      0.0079      0.0075      23      0.0085      12     
+      [MED] med_phases_prep_wav                                         144    744      1.6604      1.5219      22      1.9077      51     
+        MED:(med_phases_prep_wav)                                       144    744      1.5524      1.4110      22      1.7922      51     
+          MED: (module_MED_map:med_map_field_packed)                    144    2232     1.4756      1.3359      22      1.7139      51     
+            MED: (module_MED_map:med_map_field_packed) map              144    2232     1.3540      1.2205      22      1.5920      51     
+            MED: (module_MED_map:med_map_field_packed) copy from src    144    2232     0.0419      0.0365      33      0.0459      55     
+            MED: (module_MED_map:med_map_field_packed) copy to dest     144    2232     0.0253      0.0231      135     0.0289      54     
+          MED: (module_med_merge_mod: med_merge_auto)                   144    744      0.0677      0.0608      18      0.0737      90     
+        loop over fields                                                144    744      0.0057      0.0048      141     0.0073      0      
+      [MED] med_phases_restart_write                                    144    744      1.6353      1.6309      11      1.6475      126    
+        MED:(med_phases_restart_write)                                  144    744      1.5630      1.5616      4       1.5665      90     
+          PIO:initdecomp_dof                                            144    22       0.1643      0.1315      38      0.1793      109    
+          PIO:write_darray_double                                       144    404      0.0228      0.0205      128     0.0250      7      
+          PIO:createfile                                                144    1        0.0092      0.0092      29      0.0092      128    
+          PIO:closefile                                                 144    1        0.0010      0.0008      1       0.0040      37     
+          PIO:put_var_0d_int                                            144    4        0.0001      0.0000      18      0.0042      1      
+          PIO:put_vara_1d_double                                        144    1        0.0000      0.0000      18      0.0000      1      
+      [MED] med_phases_post_wav                                         144    744      1.1277      0.9533      142     1.2561      14     
+        MED:(med_phases_post_wav)                                       144    744      1.0324      0.8513      142     1.1621      14     
+          MED: (module_MED_map:med_map_field_packed)                    144    1488     1.0296      0.8485      142     1.1594      14     
+            MED: (module_MED_map:med_map_field_packed) map              144    744      0.8136      0.6459      142     0.9679      14     
+            MED: (module_MED_map:med_map_field_packed) copy from src    144    744      0.0994      0.0788      14      0.1167      59     
+            MED: (module_MED_map:med_map_field_packed) copy to dest     144    744      0.0883      0.0606      140     0.1169      94     
+      [MED-TO-ICE] RunPhase1                                            144    744      0.7116      0.4567      143     1.2816      0      
+      [MED] med_phases_prep_ocn_accum                                   144    744      0.6237      0.6023      3       0.6799      126    
+        MED:(med_phases_prep_ocn_accum)                                 144    744      0.5477      0.5274      3       0.5947      126    
+          MED:(med_phases_prep_ocn_custom_cesm)                         144    744      0.2579      0.2463      3       0.2809      54     
+          MED: (module_med_merge_mod: med_merge_auto)                   144    744      0.0751      0.0727      8       0.0782      48     
+      [MED] med_phases_prep_ice                                         144    744      0.5640      0.5119      1       0.6010      126    
+        MED:(med_phases_prep_ice)                                       144    744      0.4741      0.4240      1       0.4990      143    
+          MED: (module_med_merge_mod: med_merge_auto)                   144    744      0.4722      0.4205      0       0.4970      143    
+        loop over fields                                                144    744      0.0044      0.0032      0       0.0057      143    
+      [OCN] RunPhase1                                                   144    744      0.5504      0.5304      119     0.5755      74     
+        DOCN_RUN                                                        144    744      0.3183      0.2990      96      0.3438      80     
+          docn_strdata_advance                                          144    744      0.2304      0.2116      7       0.2523      80     
+            docn_strd_adv_total                                         144    744      0.2287      0.2100      7       0.2508      80     
+              docn_strd_adv_tint                                        144    744      0.1304      0.1119      7       0.1529      80     
+              docn_strd_adv_readLBUB                                    144    744      0.0948      0.0943      121     0.0968      18     
+                docn_readLBUB_UB_readpio                                144    1        0.0914      0.0913      96      0.0916      1      
+                docn_readLBUB_setup                                     144    744      0.0011      0.0009      2       0.0025      18     
+                docn_readLBUB_filemgt                                   144    744      0.0002      0.0002      52      0.0004      23     
+                docn_readLBUB_fbound                                    144    1        0.0000      0.0000      99      0.0000      9      
+          docn_dfield_copy                                              144    744      0.0389      0.0344      115     0.0479      13     
+          PIO:createfile                                                144    1        0.0113      0.0082      0       0.0115      7      
+          PIO:closefile                                                 144    1        0.0049      0.0049      67      0.0049      108    
+          PIO:initdecomp_dof                                            144    1        0.0028      0.0027      2       0.0028      109    
+          PIO:write_darray_double                                       144    1        0.0003      0.0002      109     0.0003      2      
+          PIO:put_var1_int                                              144    2        0.0000      0.0000      8       0.0001      128    
+          PIO:put_vara_1d_int                                           144    2        0.0000      0.0000      1       0.0000      24     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    744      0.0451      0.0430      134     0.0485      17     
+        calling NUOPC_GetStateMemberCount                               144    744      0.0090      0.0079      63      0.0102      82     
+        loop over fields                                                144    744      0.0010      0.0009      98      0.0012      16     
+        deal with allocs                                                144    744      0.0009      0.0008      134     0.0013      55     
+      [MED] med_phases_prep_ocn_avg                                     144    744      0.5250      0.5088      20      0.5829      54     
+        MED:(med_phases_prep_ocn_avg)                                   144    744      0.4434      0.4296      3       0.4901      54     
+        loop over fields                                                144    744      0.0033      0.0028      74      0.0041      125    
+      [MED] med_phases_aofluxes_run                                     144    744      0.4230      0.1381      0       0.5334      27     
+        MED:(med_phases_aofluxes_run)                                   144    744      0.3362      0.0523      0       0.4543      27     
+          MED:(med_aofluxes_run)                                        144    744      0.3347      0.0509      0       0.4528      27     
+        MED:(med_aofluxes_init)                                         144    1        0.0006      0.0006      9       0.0007      65     
+      [ATM-TO-MED] RunPhase1                                            144    744      0.3689      0.2707      143     0.4546      123    
+      [MED] med_phases_post_ocn                                         144    744      0.3469      0.3036      23      0.4296      5      
+        MED:(med_phases_post_ocn)                                       144    744      0.2577      0.2156      23      0.3401      5      
+          MED:(med_phases_post_ocn) map_ocn2ice                         144    744      0.2559      0.2139      23      0.3384      5      
+            MED: (module_MED_map:med_map_field_packed)                  144    744      0.2546      0.2125      23      0.3372      5      
+              MED: (module_MED_map:med_map_field_packed) map            144    744      0.1920      0.1476      23      0.2740      5      
+              MED: (module_MED_map:med_map_field_packed) copy from src  144    744      0.0291      0.0262      105     0.0361      126    
+              MED: (module_MED_map:med_map_field_packed) copy to dest   144    744      0.0227      0.0185      130     0.0268      114    
+      [WAV-TO-MED] RunPhase1                                            144    744      0.3353      0.2585      0       0.7101      143    
+      [ROF] RunPhase1                                                   144    744      0.2983      0.2537      142     0.3565      139    
+        DROF_RUN                                                        144    744      0.2010      0.1637      142     0.2437      139    
+          drof_datamode                                                 144    744      0.0917      0.0808      142     0.1066      110    
+            PIO:createfile                                              144    1        0.0099      0.0068      0       0.0101      128    
+            PIO:closefile                                               144    1        0.0019      0.0018      72      0.0019      32     
+            PIO:put_vara_1d_int                                         144    2        0.0004      0.0002      50      0.0004      0      
+            PIO:put_var1_int                                            144    2        0.0003      0.0000      47      0.0004      129    
+          drof_strdata_advance                                          144    744      0.0805      0.0609      142     0.1011      108    
+            drof_strd_adv_total                                         144    744      0.0784      0.0593      142     0.0985      108    
+              drof_strd_adv_tint                                        144    744      0.0674      0.0511      142     0.0860      108    
+              drof_strd_adv_readLBUB                                    144    744      0.0071      0.0047      57      0.0097      85     
+                drof_readLBUB_UB_readpio                                144    1        0.0023      0.0003      14      0.0054      86     
+                drof_readLBUB_setup                                     144    744      0.0019      0.0014      142     0.0027      54     
+                drof_readLBUB_filemgt                                   144    744      0.0003      0.0002      86      0.0004      0      
+                drof_readLBUB_fbound                                    144    1        0.0000      0.0000      107     0.0000      117    
+          drof_dfield_copy                                              144    744      0.0262      0.0195      72      0.0350      110    
+        deal with allocs                                                144    744      0.0016      0.0012      142     0.0024      18     
+        loop over fields                                                144    744      0.0009      0.0006      115     0.0012      76     
+      [MED] med_phases_ocnalb_run                                       144    744      0.2456      0.1756      4       0.4630      143    
+        MED:(med_phases_ocnalb_run)                                     144    744      0.1660      0.0994      2       0.3847      143    
+      [MED] med_phases_post_rof                                         144    744      0.2432      0.1394      0       0.6531      141    
+        MED:(med_phases_post_rof)                                       144    744      0.1590      0.0576      0       0.5665      141    
+          MED:(med_phases_post_rof) map_rof2ocn                         144    744      0.1516      0.0514      0       0.5567      141    
+            MED: (module_MED_map:med_map_field_packed)                  144    744      0.1504      0.0503      0       0.5553      141    
+              MED: (module_MED_map:med_map_field_packed) map            144    744      0.1209      0.0236      0       0.5229      141    
+              MED: (module_MED_map:med_map_field_packed) copy from src  144    744      0.0178      0.0147      57      0.0211      120    
+              MED: (module_MED_map:med_map_field_packed) copy to dest   144    744      0.0039      0.0029      15      0.0107      126    
+          MED:(med_phases_post_rof) map_rof2ice                         144    744      0.0045      0.0036      27      0.0095      126    
+            MED: (module_MED_map:med_map_field_packed)                  144    744      0.0037      0.0029      68      0.0081      126    
+      [MED] med_phases_history_write                                    144    1488     0.2392      0.2262      15      0.2666      109    
+        MED:(med_phases_history_write)                                  144    1488     0.0726      0.0652      15      0.0933      109    
+      [ROF-TO-MED] RunPhase1                                            144    744      0.1756      0.1472      57      0.1971      126    
+      [MED-TO-OCN] RunPhase1                                            144    744      0.1725      0.1049      0       0.3476      24     
+      [OCN-TO-MED] RunPhase1                                            144    744      0.1604      0.1370      5       0.2675      12     
+      [MED-TO-WAV] RunPhase1                                            144    744      0.1528      0.1193      11      0.2079      69     
+      [MED] med_phases_profile                                          144    744      0.0880      0.0835      34      0.1382      0      
+        MED:(med_phases_profile)                                        144    744      0.0185      0.0173      34      0.0702      0      
+      [MED-TO-ESM0001] RunPhase1                                        144    1        0.0000      0.0000      80      0.0000      1      
+      [ESM0001-TO-MED] RunPhase1                                        144    1        0.0000      0.0000      26      0.0000      63     
+      [ESM0001-TO-ATM] RunPhase1                                        144    1        0.0000      0.0000      136     0.0000      18     
+      [ATM-TO-ESM0001] RunPhase1                                        144    1        0.0000      0.0000      117     0.0000      18     
+      [ROF-TO-ESM0001] RunPhase1                                        144    1        0.0000      0.0000      131     0.0000      14     
+      [ESM0001-TO-ICE] RunPhase1                                        144    1        0.0000      0.0000      112     0.0000      18     
+      [ICE-TO-ESM0001] RunPhase1                                        144    1        0.0000      0.0000      47      0.0000      90     
+      [WAV-TO-ESM0001] RunPhase1                                        144    1        0.0000      0.0000      36      0.0000      32     
+      [OCN-TO-ESM0001] RunPhase1                                        144    1        0.0000      0.0000      137     0.0000      18     
+      [ESM0001-TO-OCN] RunPhase1                                        144    1        0.0000      0.0000      129     0.0000      18     
+      [ESM0001-TO-ROF] RunPhase1                                        144    1        0.0000      0.0000      130     0.0000      54     
+      [ESM0001-TO-WAV] RunPhase1                                        144    1        0.0000      0.0000      129     0.0000      18     
+  [ensemble] Init 1                                                     144    1        36.4614     36.4526     65      36.4845     11     
+    [ESM0001] IPDv02p3                                                  144    1        24.6761     24.6757     105     24.6768     121    
+      [ATM] IPDv01p3                                                    144    1        16.2360     16.2355     2       16.2363     77     
+        datm_strdata_init                                               144    1        15.3776     15.3770     134     15.3804     0      
+          PIO:openfile                                                  144    10       0.5045      0.5041      1       0.5053      112    
+          PIO:closefile                                                 144    10       0.0014      0.0005      79      0.0023      3      
+        DATM_RUN                                                        144    1        0.8408      0.8376      123     0.8421      51     
+          datm_strdata_advance                                          144    1        0.7206      0.7203      35      0.7210      83     
+            datm_strd_adv_total                                         144    1        0.7202      0.7198      36      0.7207      83     
+              datm_strd_adv_readLBUB                                    144    10       0.7176      0.7174      12      0.7178      138    
+                PIO:openfile                                            144    12       0.4437      0.4042      0       0.4459      110    
+                datm_readLBUB_LB_readpio                                144    10       0.2006      0.1985      52      0.2122      0      
+                datm_readLBUB_UB_readpio                                144    10       0.0552      0.0542      19      0.0626      0      
+                PIO:initdecomp_dof                                      144    10       0.0129      0.0089      0       0.0135      143    
+                datm_readLBUB_fbound                                    144    10       0.0016      0.0012      0       0.0018      133    
+                PIO:closefile                                           144    2        0.0016      0.0000      131     0.0023      40     
+                datm_readLBUB_filemgt                                   144    10       0.0002      0.0000      27      0.0247      0      
+                datm_readLBUB_setup                                     144    10       0.0000      0.0000      99      0.0000      1      
+              datm_strd_adv_coszen                                      144    1        0.0012      0.0009      60      0.0014      106    
+                datm_strd_adv_coszenC                                   144    1        0.0007      0.0005      54      0.0009      124    
+                datm_strd_adv_coszenN                                   144    1        0.0004      0.0003      133     0.0007      13     
+              datm_strd_adv_tint                                        144    9        0.0008      0.0005      24      0.0009      72     
+          PIO:openfile                                                  144    1        0.0297      0.0295      62      0.0299      112    
+          PIO:get_var1_int                                              144    996      0.0191      0.0147      133     0.0267      0      
+          PIO:get_var1_text                                             144    506      0.0100      0.0091      1       0.0110      128    
+          datm_datamode                                                 144    1        0.0008      0.0003      5       0.0012      122    
+          PIO:closefile                                                 144    1        0.0001      0.0001      90      0.0001      3      
+          datm_dfield_copy                                              144    1        0.0001      0.0000      24      0.0001      54     
+      [ICE] IPDv01p3                                                    144    1        1.7759      1.7752      79      1.7766      44     
+        cice_init_total                                                 144    1        1.7751      1.7743      74      1.7758      18     
+          cice_init                                                     144    1        1.6096      1.6079      80      1.6113      21     
+            ICE:Total                                                   144    1        1.5481      1.5464      134     1.5495      32     
+              PIO:openfile                                              144    1        0.0344      0.0343      40      0.0347      0      
+              PIO:initdecomp_dof                                        144    2        0.0280      0.0278      74      0.0286      109    
+              ICE:Bound                                                 144    5        0.0008      0.0005      123     0.0012      26     
+              ICE:Advection                                             144    1        0.0000      0.0000      125     0.0002      0      
+      [WAV] IPDv01p3                                                    144    1        1.2585      1.2580      141     1.2610      18     
+      [ROF] IPDv01p3                                                    144    1        0.5095      0.5087      3       0.5099      126    
+        drof_strdata_init                                               144    1        0.4026      0.4023      47      0.4031      0      
+          PIO:openfile                                                  144    1        0.0332      0.0332      5       0.0332      36     
+          PIO:closefile                                                 144    1        0.0000      0.0000      113     0.0000      40     
+        DROF_RUN                                                        144    1        0.1043      0.1032      31      0.1047      137    
+          drof_strdata_advance                                          144    1        0.0677      0.0668      8       0.0680      131    
+            drof_strd_adv_total                                         144    1        0.0677      0.0668      8       0.0680      126    
+              drof_strd_adv_readLBUB                                    144    1        0.0676      0.0668      8       0.0679      126    
+                drof_readLBUB_UB_readpio                                144    1        0.0336      0.0293      141     0.0455      25     
+                drof_readLBUB_LB_readpio                                144    1        0.0309      0.0182      4       0.0355      132    
+                PIO:initdecomp_dof                                      144    1        0.0022      0.0020      44      0.0023      1      
+                PIO:openfile                                            144    1        0.0008      0.0008      0       0.0009      112    
+                drof_readLBUB_fbound                                    144    1        0.0000      0.0000      128     0.0000      133    
+                drof_readLBUB_setup                                     144    1        0.0000      0.0000      80      0.0000      90     
+                drof_readLBUB_filemgt                                   144    1        0.0000      0.0000      60      0.0000      0      
+              drof_strd_adv_tint                                        144    1        0.0001      0.0000      3       0.0001      131    
+          PIO:openfile                                                  144    1        0.0329      0.0329      63      0.0330      112    
+          drof_datamode                                                 144    1        0.0001      0.0001      29      0.0001      4      
+          PIO:closefile                                                 144    1        0.0000      0.0000      55      0.0000      109    
+          PIO:get_var1_int                                              144    2        0.0000      0.0000      53      0.0001      34     
+          PIO:get_var1_text                                             144    1        0.0000      0.0000      73      0.0000      127    
+          drof_dfield_copy                                              144    1        0.0000      0.0000      46      0.0001      22     
+      [OCN] IPDv01p3                                                    144    1        0.3156      0.3153      122     0.3165      0      
+        docn_strdata_init                                               144    1        0.1872      0.1866      118     0.1883      0      
+          PIO:openfile                                                  144    1        0.0329      0.0329      17      0.0330      0      
+          PIO:closefile                                                 144    1        0.0000      0.0000      113     0.0001      140    
+        DOCN_RUN                                                        144    1        0.1151      0.1142      90      0.1152      142    
+          docn_strdata_advance                                          144    1        0.0752      0.0752      78      0.0753      37     
+            docn_strd_adv_total                                         144    1        0.0752      0.0752      78      0.0753      37     
+              docn_strd_adv_readLBUB                                    144    1        0.0751      0.0750      84      0.0752      37     
+                docn_readLBUB_LB_readpio                                144    1        0.0650      0.0649      1       0.0651      110    
+                docn_readLBUB_UB_readpio                                144    1        0.0067      0.0067      0       0.0067      83     
+                PIO:initdecomp_dof                                      144    1        0.0025      0.0024      110     0.0026      1      
+                PIO:openfile                                            144    1        0.0008      0.0008      84      0.0009      109    
+                docn_readLBUB_fbound                                    144    1        0.0000      0.0000      58      0.0000      109    
+                docn_readLBUB_setup                                     144    1        0.0000      0.0000      112     0.0000      18     
+                docn_readLBUB_filemgt                                   144    1        0.0000      0.0000      64      0.0000      0      
+              docn_strd_adv_tint                                        144    1        0.0001      0.0001      37      0.0001      5      
+          PIO:openfile                                                  144    1        0.0299      0.0299      63      0.0299      80     
+          PIO:initdecomp_dof                                            144    1        0.0033      0.0033      3       0.0034      1      
+          PIO:closefile                                                 144    1        0.0003      0.0000      37      0.0009      0      
+          PIO:get_var1_int                                              144    2        0.0000      0.0000      64      0.0000      65     
+          docn_dfield_copy                                              144    1        0.0000      0.0000      115     0.0000      54     
+          PIO:get_var1_text                                             144    1        0.0000      0.0000      65      0.0000      96     
+      [WAV-TO-MED] IPDv05p5                                             144    1        0.2287      0.2203      2       0.2529      102    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0007      0.0007      24      0.0007      35     
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      133     0.0001      18     
+        deal with allocs                                                144    2        0.0000      0.0000      34      0.0000      31     
+      [MED-TO-ICE] IPDv05p5                                             144    1        0.2217      0.2200      88      0.2312      81     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0007      0.0006      81      0.0007      90     
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      133     0.0001      57     
+        deal with allocs                                                144    2        0.0000      0.0000      15      0.0000      119    
+      [ICE-TO-MED] IPDv05p5                                             144    1        0.2026      0.1956      106     0.2177      91     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0007      0.0007      4       0.0008      16     
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      25      0.0001      37     
+        deal with allocs                                                144    2        0.0000      0.0000      24      0.0000      114    
+      [MED-TO-ICE] IPDv05p4                                             144    1        0.1915      0.1894      54      0.1974      55     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0007      0.0006      14      0.0007      117    
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      15      0.0001      18     
+        deal with allocs                                                144    2        0.0000      0.0000      133     0.0000      45     
+      [WAV-TO-MED] IPDv05p4                                             144    1        0.1910      0.1889      1       0.1985      10     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0007      0.0007      9       0.0007      126    
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      58      0.0001      90     
+        deal with allocs                                                144    2        0.0000      0.0000      7       0.0000      143    
+      [MED-TO-ICE] IPDv05p6b                                            144    1        0.1830      0.1827      117     0.1831      33     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0006      0.0006      4       0.0007      90     
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      7       0.0001      120    
+        deal with allocs                                                144    2        0.0000      0.0000      88      0.0000      33     
+      [WAV-TO-MED] IPDv05p6b                                            144    1        0.1787      0.1787      126     0.1787      74     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0008      0.0007      8       0.0008      126    
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      76      0.0001      64     
+        deal with allocs                                                144    2        0.0000      0.0000      7       0.0000      20     
+      [ROF-TO-MED] IPDv05p5                                             144    1        0.1671      0.1666      90      0.1673      57     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0005      0.0005      10      0.0006      140    
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0000      2       0.0001      54     
+        deal with allocs                                                144    2        0.0000      0.0000      80      0.0000      102    
+      [ATM-TO-MED] IPDv05p5                                             144    1        0.1608      0.1603      26      0.1653      106    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0006      0.0006      29      0.0007      131    
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      33      0.0001      111    
+        deal with allocs                                                144    2        0.0000      0.0000      33      0.0000      16     
+      [ICE-TO-MED] IPDv05p4                                             144    1        0.1287      0.1277      86      0.1313      83     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0007      0.0007      33      0.0008      18     
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      81      0.0001      54     
+        deal with allocs                                                144    2        0.0000      0.0000      135     0.0000      57     
+      [ICE-TO-MED] IPDv05p6b                                            144    1        0.1274      0.1274      18      0.1274      9      
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0008      0.0007      51      0.0008      18     
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      24      0.0001      15     
+        deal with allocs                                                144    2        0.0000      0.0000      32      0.0000      65     
+      [OCN-TO-MED] IPDv05p5                                             144    1        0.1226      0.1178      91      0.1245      77     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0006      0.0005      24      0.0006      140    
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      27      0.0001      13     
+        deal with allocs                                                144    2        0.0000      0.0000      10      0.0000      50     
+      [ESM0001-TO-MED] IPDv05p5                                         144    1        0.0947      0.0706      102     0.1053      54     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0005      0.0005      27      0.0006      126    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      92      0.0001      59     
+        deal with allocs                                                144    2        0.0000      0.0000      9       0.0000      47     
+      [MED-TO-WAV] IPDv05p5                                             144    1        0.0889      0.0872      62      0.0905      121    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0004      0.0004      4       0.0005      90     
+        calling NUOPC_GetStateMemberCount                               144    2        0.0000      0.0000      86      0.0000      126    
+        deal with allocs                                                144    2        0.0000      0.0000      73      0.0000      87     
+      [ICE-TO-MED] IPDv05p6a                                            144    1        0.0859      0.0855      46      0.0892      54     
+      [WAV-TO-MED] IPDv05p6a                                            144    1        0.0836      0.0832      47      0.0867      90     
+      [MED-TO-WAV] IPDv05p6b                                            144    1        0.0833      0.0833      90      0.0833      50     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0005      0.0004      30      0.0005      18     
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0000      94      0.0001      122    
+        deal with allocs                                                144    2        0.0000      0.0000      98      0.0000      52     
+      [ATM-TO-MED] IPDv05p6a                                            144    1        0.0788      0.0783      44      0.0823      90     
+      [MED-TO-OCN] IPDv05p5                                             144    1        0.0783      0.0690      81      0.0809      62     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0004      0.0004      7       0.0005      82     
+        calling NUOPC_GetStateMemberCount                               144    2        0.0000      0.0000      40      0.0000      54     
+        deal with allocs                                                144    2        0.0000      0.0000      142     0.0000      30     
+      [ESM0001-TO-MED] IPDv05p4                                         144    1        0.0781      0.0704      10      0.0827      18     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0005      0.0005      11      0.0005      90     
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      68      0.0001      102    
+        deal with allocs                                                144    2        0.0000      0.0000      142     0.0000      18     
+      [MED] IPDv03p4                                                    144    1        0.0767      0.0763      126     0.0768      45     
+      [MED-TO-ICE] IPDv05p6a                                            144    1        0.0739      0.0737      57      0.0751      25     
+      [OCN-TO-MED] IPDv05p6a                                            144    1        0.0732      0.0727      68      0.0765      90     
+      [ESM0001-TO-MED] IPDv05p6a                                        144    1        0.0727      0.0705      11      0.0748      43     
+      [ROF-TO-MED] IPDv05p6a                                            144    1        0.0703      0.0697      69      0.0735      90     
+      [OCN-TO-MED] IPDv05p4                                             144    1        0.0651      0.0647      90      0.0671      43     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0006      0.0005      21      0.0006      137    
+        calling NUOPC_GetStateMemberCount                               144    2        0.0000      0.0000      20      0.0000      54     
+        deal with allocs                                                144    2        0.0000      0.0000      92      0.0000      61     
+      [ROF-TO-MED] IPDv05p4                                             144    1        0.0594      0.0589      90      0.0596      39     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0005      0.0005      22      0.0006      126    
+        calling NUOPC_GetStateMemberCount                               144    2        0.0000      0.0000      34      0.0000      90     
+        deal with allocs                                                144    2        0.0000      0.0000      132     0.0000      18     
+      [MED-TO-WAV] IPDv05p4                                             144    1        0.0571      0.0569      86      0.0574      87     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0004      0.0004      7       0.0005      36     
+        calling NUOPC_GetStateMemberCount                               144    2        0.0000      0.0000      29      0.0001      18     
+        deal with allocs                                                144    2        0.0000      0.0000      98      0.0000      54     
+      [MED-TO-OCN] IPDv05p4                                             144    1        0.0558      0.0499      55      0.0578      29     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0004      0.0004      14      0.0005      126    
+        calling NUOPC_GetStateMemberCount                               144    2        0.0000      0.0000      143     0.0000      90     
+        deal with allocs                                                144    2        0.0000      0.0000      15      0.0000      2      
+      [MED-TO-ESM0001] IPDv05p6a                                        144    1        0.0551      0.0516      127     0.0571      0      
+      [MED-TO-OCN] IPDv05p6a                                            144    1        0.0531      0.0519      25      0.0535      38     
+      [MED-TO-WAV] IPDv05p6a                                            144    1        0.0527      0.0523      139     0.0529      10     
+      [OCN-TO-MED] IPDv05p6b                                            144    1        0.0500      0.0500      54      0.0500      116    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0006      0.0006      81      0.0007      18     
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      80      0.0001      111    
+        deal with allocs                                                144    2        0.0000      0.0000      33      0.0000      32     
+      [MED-TO-ESM0001] IPDv05p5                                         144    1        0.0494      0.0491      139     0.0499      90     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0004      0.0004      25      0.0004      72     
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      0       0.0001      95     
+        deal with allocs                                                144    2        0.0000      0.0000      104     0.0000      98     
+      [ATM-TO-MED] IPDv05p4                                             144    1        0.0490      0.0486      90      0.0496      53     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0006      0.0006      26      0.0007      126    
+        calling NUOPC_GetStateMemberCount                               144    2        0.0000      0.0000      28      0.0001      18     
+        deal with allocs                                                144    2        0.0000      0.0000      7       0.0000      54     
+      [ROF-TO-MED] IPDv05p6b                                            144    1        0.0476      0.0476      126     0.0476      104    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0006      0.0005      7       0.0006      90     
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      134     0.0001      120    
+        deal with allocs                                                144    2        0.0000      0.0000      24      0.0000      36     
+      [ICE-TO-ESM0001] IPDv05p5                                         144    1        0.0455      0.0439      84      0.0460      126    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0002      0.0002      32      0.0003      106    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      0       0.0000      106    
+        deal with allocs                                                144    2        0.0000      0.0000      28      0.0000      106    
+      [ESM0001-TO-ICE] IPDv05p5                                         144    1        0.0379      0.0375      28      0.0394      16     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0003      0.0003      26      0.0003      126    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      20      0.0000      102    
+        deal with allocs                                                144    2        0.0000      0.0000      15      0.0000      109    
+      [ESM0001-TO-ICE] IPDv05p6a                                        144    1        0.0379      0.0375      48      0.0389      90     
+      [ESM0001-TO-ICE] IPDv05p4                                         144    1        0.0378      0.0376      51      0.0391      137    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0003      0.0003      11      0.0003      35     
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      15      0.0000      81     
+        deal with allocs                                                144    2        0.0000      0.0000      2       0.0000      54     
+      [MED] IPDv03p5                                                    144    1        0.0363      0.0343      34      0.0404      126    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    16       0.0005      0.0005      23      0.0005      72     
+        calling NUOPC_GetStateMemberCount                               144    16       0.0001      0.0001      17      0.0001      42     
+        deal with allocs                                                144    22       0.0000      0.0000      116     0.0000      1      
+      [OCN-TO-ESM0001] IPDv05p5                                         144    1        0.0355      0.0206      118     0.0387      62     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0001      0.0001      22      0.0001      91     
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      0       0.0000      91     
+        deal with allocs                                                144    2        0.0000      0.0000      3       0.0000      91     
+      [ATM-TO-MED] IPDv05p6b                                            144    1        0.0329      0.0328      18      0.0329      116    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0007      0.0007      17      0.0008      126    
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      51      0.0001      103    
+        deal with allocs                                                144    2        0.0000      0.0000      90      0.0000      68     
+      [ICE-TO-ESM0001] IPDv05p6a                                        144    1        0.0326      0.0291      90      0.0331      50     
+      [WAV-TO-ESM0001] IPDv05p6a                                        144    1        0.0301      0.0268      90      0.0307      63     
+      [ICE-TO-ESM0001] IPDv05p4                                         144    1        0.0297      0.0292      53      0.0301      90     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0002      0.0002      15      0.0002      126    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      36      0.0000      31     
+        deal with allocs                                                144    2        0.0000      0.0000      15      0.0000      54     
+      [MED-TO-ESM0001] IPDv05p4                                         144    1        0.0293      0.0273      91      0.0296      0      
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0004      0.0004      25      0.0004      18     
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      36      0.0001      108    
+        deal with allocs                                                144    2        0.0000      0.0000      21      0.0000      131    
+      [MED-TO-OCN] IPDv05p6b                                            144    1        0.0286      0.0286      54      0.0286      131    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0005      0.0005      9       0.0005      18     
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      82      0.0001      108    
+        deal with allocs                                                144    2        0.0000      0.0000      72      0.0000      82     
+      [WAV-TO-ESM0001] IPDv05p4                                         144    1        0.0278      0.0276      39      0.0282      126    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0002      0.0002      14      0.0002      116    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      36      0.0000      83     
+        deal with allocs                                                144    2        0.0000      0.0000      81      0.0000      54     
+      [WAV-TO-ESM0001] IPDv05p5                                         144    1        0.0274      0.0272      25      0.0279      90     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0002      0.0002      27      0.0002      126    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      36      0.0000      90     
+        deal with allocs                                                144    2        0.0000      0.0000      14      0.0000      53     
+      [ATM-TO-ESM0001] IPDv05p5                                         144    1        0.0235      0.0219      134     0.0243      26     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0001      0.0001      32      0.0001      138    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      108     0.0000      89     
+        deal with allocs                                                144    2        0.0000      0.0000      13      0.0000      82     
+      [ATM-TO-ESM0001] IPDv05p4                                         144    1        0.0222      0.0219      87      0.0224      126    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0001      0.0001      26      0.0001      119    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      36      0.0000      91     
+        deal with allocs                                                144    2        0.0000      0.0000      105     0.0000      71     
+      [ATM-TO-ESM0001] IPDv05p6a                                        144    1        0.0214      0.0213      10      0.0217      70     
+      [OCN-TO-ESM0001] IPDv05p6a                                        144    1        0.0194      0.0161      54      0.0198      46     
+      [OCN-TO-ESM0001] IPDv05p4                                         144    1        0.0190      0.0163      83      0.0199      86     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0001      0.0001      14      0.0001      85     
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      108     0.0000      54     
+        deal with allocs                                                144    2        0.0000      0.0000      103     0.0000      46     
+      [ESM0001-TO-OCN] IPDv05p5                                         144    1        0.0175      0.0161      16      0.0178      123    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0001      0.0001      14      0.0001      67     
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      45      0.0000      138    
+        deal with allocs                                                144    2        0.0000      0.0000      134     0.0000      18     
+      [ESM0001-TO-OCN] IPDv05p4                                         144    1        0.0174      0.0160      137     0.0180      85     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0001      0.0001      72      0.0001      80     
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      44      0.0000      90     
+        deal with allocs                                                144    2        0.0000      0.0000      137     0.0000      69     
+      [ESM0001-TO-WAV] IPDv05p5                                         144    1        0.0173      0.0171      25      0.0175      16     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0001      0.0001      4       0.0001      143    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      127     0.0000      126    
+        deal with allocs                                                144    2        0.0000      0.0000      69      0.0000      53     
+      [ESM0001-TO-OCN] IPDv05p6a                                        144    1        0.0171      0.0161      90      0.0173      136    
+      [ROF-TO-ESM0001] IPDv05p6a                                        144    1        0.0170      0.0137      90      0.0175      68     
+      [ESM0001-TO-WAV] IPDv05p4                                         144    1        0.0169      0.0168      73      0.0170      95     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0001      0.0001      20      0.0001      124    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      64      0.0000      121    
+        deal with allocs                                                144    2        0.0000      0.0000      120     0.0000      71     
+      [ESM0001-TO-WAV] IPDv05p6a                                        144    1        0.0167      0.0165      42      0.0170      8      
+      [ESM0001-TO-ATM] IPDv05p6a                                        144    1        0.0164      0.0122      18      0.0169      48     
+      [ROF-TO-ESM0001] IPDv05p5                                         144    1        0.0158      0.0139      15      0.0163      126    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0000      0.0000      22      0.0000      141    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      44      0.0000      18     
+        deal with allocs                                                144    2        0.0000      0.0000      5       0.0000      57     
+      [ESM0001-TO-ATM] IPDv05p5                                         144    1        0.0158      0.0123      90      0.0162      44     
+        deal with allocs                                                144    2        0.0000      0.0000      142     0.0000      54     
+      [ESM0001-TO-ATM] IPDv05p4                                         144    1        0.0157      0.0124      90      0.0161      63     
+        deal with allocs                                                144    2        0.0000      0.0000      118     0.0000      90     
+      [ROF-TO-ESM0001] IPDv05p4                                         144    1        0.0156      0.0136      43      0.0160      90     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0000      0.0000      14      0.0000      101    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      135     0.0000      90     
+        deal with allocs                                                144    2        0.0000      0.0000      114     0.0000      40     
+      [ESM0001-TO-ROF] IPDv05p4                                         144    1        0.0125      0.0119      85      0.0127      98     
+        deal with allocs                                                144    2        0.0000      0.0000      20      0.0000      126    
+      [ESM0001-TO-ROF] IPDv05p5                                         144    1        0.0123      0.0121      133     0.0126      25     
+        deal with allocs                                                144    2        0.0000      0.0000      130     0.0000      90     
+      [ESM0001-TO-ROF] IPDv05p6a                                        144    1        0.0123      0.0121      93      0.0125      42     
+      [MED] IPDv03p3                                                    144    1        0.0094      0.0092      19      0.0100      90     
+      [MED-TO-ESM0001] IPDv05p6b                                        144    1        0.0015      0.0009      90      0.0017      112    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0005      0.0004      8       0.0005      106    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0001      0.0001      61      0.0001      90     
+        deal with allocs                                                144    2        0.0000      0.0000      128     0.0000      52     
+      [ESM0001-TO-MED] IPDv05p6b                                        144    1        0.0009      0.0009      80      0.0009      139    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0006      0.0006      8       0.0007      104    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0001      0.0001      79      0.0001      60     
+        deal with allocs                                                144    2        0.0000      0.0000      142     0.0000      6      
+      [MED] IPDv03p6                                                    144    1        0.0008      0.0008      32      0.0009      90     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0007      0.0007      32      0.0007      125    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      51      0.0001      143    
+        deal with allocs                                                144    1        0.0000      0.0000      26      0.0000      75     
+      [ESM0001] IPDv05p4                                                144    1        0.0006      0.0005      9       0.0007      111    
+        deal with allocs                                                144    2        0.0000      0.0000      108     0.0000      68     
+      [ESM0001-TO-ICE] IPDv05p6b                                        144    1        0.0005      0.0005      72      0.0005      33     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0003      0.0003      15      0.0003      126    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      112     0.0000      20     
+        deal with allocs                                                144    2        0.0000      0.0000      97      0.0000      112    
+      [ATM] IPDv01p4                                                    144    1        0.0004      0.0002      76      0.0012      119    
+        deal with allocs                                                144    1        0.0000      0.0000      83      0.0000      139    
+      [WAV-TO-ESM0001] IPDv05p6b                                        144    1        0.0004      0.0004      34      0.0004      59     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0002      0.0002      10      0.0002      126    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      92      0.0000      124    
+        deal with allocs                                                144    2        0.0000      0.0000      104     0.0000      15     
+      [ICE-TO-ESM0001] IPDv05p6b                                        144    1        0.0004      0.0004      108     0.0004      103    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0002      0.0002      63      0.0002      126    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      9       0.0000      140    
+        deal with allocs                                                144    2        0.0000      0.0000      27      0.0000      55     
+      [ICE] IPDv01p4                                                    144    1        0.0004      0.0004      135     0.0004      18     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0003      0.0003      135     0.0004      0      
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      9       0.0000      141    
+        deal with allocs                                                144    1        0.0000      0.0000      99      0.0000      95     
+      [ATM-TO-ESM0001] IPDv05p6b                                        144    1        0.0003      0.0003      72      0.0003      31     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0001      0.0001      14      0.0002      138    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      45      0.0000      67     
+        deal with allocs                                                144    2        0.0000      0.0000      33      0.0000      62     
+      [OCN-TO-ESM0001] IPDv05p6b                                        144    1        0.0002      0.0002      108     0.0002      31     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0001      0.0001      80      0.0001      143    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      14      0.0000      97     
+        deal with allocs                                                144    2        0.0000      0.0000      85      0.0000      112    
+      [ESM0001-TO-WAV] IPDv05p6b                                        144    1        0.0002      0.0002      90      0.0002      69     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0001      0.0001      37      0.0001      138    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      34      0.0000      109    
+        deal with allocs                                                144    2        0.0000      0.0000      137     0.0000      36     
+      [ESM0001-TO-OCN] IPDv05p6b                                        144    1        0.0002      0.0002      18      0.0002      142    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0001      0.0001      33      0.0001      121    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      81      0.0000      123    
+        deal with allocs                                                144    2        0.0000      0.0000      97      0.0000      89     
+      [ROF-TO-ESM0001] IPDv05p6b                                        144    1        0.0002      0.0002      36      0.0002      129    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0000      0.0000      20      0.0000      115    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      142     0.0000      116    
+        deal with allocs                                                144    2        0.0000      0.0000      120     0.0000      68     
+      [WAV] IPDv01p4                                                    144    1        0.0001      0.0001      25      0.0001      90     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0001      0.0001      26      0.0001      139    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      3       0.0000      18     
+        deal with allocs                                                144    1        0.0000      0.0000      120     0.0000      44     
+      [ESM0001-TO-ATM] IPDv05p6b                                        144    1        0.0001      0.0001      90      0.0001      9      
+        deal with allocs                                                144    2        0.0000      0.0000      5       0.0000      18     
+      [ESM0001-TO-ROF] IPDv05p6b                                        144    1        0.0001      0.0001      126     0.0001      22     
+        deal with allocs                                                144    2        0.0000      0.0000      129     0.0000      54     
+      [OCN] IPDv01p4                                                    144    1        0.0001      0.0001      9       0.0001      18     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0001      0.0001      26      0.0001      18     
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      140     0.0000      18     
+        deal with allocs                                                144    1        0.0000      0.0000      90      0.0000      71     
+      [ESM0001] IPDv05p6                                                144    1        0.0001      0.0000      7       0.0003      109    
+        deal with allocs                                                144    2        0.0000      0.0000      127     0.0000      0      
+      [ROF] IPDv01p4                                                    144    1        0.0000      0.0000      27      0.0001      18     
+        deal with allocs                                                144    1        0.0000      0.0000      26      0.0000      18     
+    [ESM0001] IPDv02p5                                                  144    1        7.5013      7.5008      123     7.5017      0      
+      [MED] IPDv03p7                                                    144    2        7.4906      7.4899      97      7.4917      0      
+        MED: (module_med_map: RouteHandles_init)                        144    1        5.1613      5.1486      126     5.1652      34     
+        MED:(med_phases_restart_read)                                   144    1        2.1254      2.1243      61      2.1263      1      
+          PIO:closefile                                                 144    24       0.1463      0.1176      139     0.2087      37     
+          PIO:initdecomp_dof                                            144    22       0.1367      0.1353      0       0.1410      1      
+          PIO:openfile                                                  144    24       0.1109      0.0915      37      0.1231      0      
+        MED: (module_MED_MAP:MapNorm_init)                              144    1        0.0055      0.0053      9       0.0056      130    
+        MED:(med_phases_post_atm)                                       144    1        0.0040      0.0038      109     0.0042      97     
+          MED:(med_phases_post_atm) map_atm2ice                         144    1        0.0021      0.0014      135     0.0025      1      
+            MED: (module_MED_map:med_map_field_packed)                  144    1        0.0021      0.0014      135     0.0025      1      
+              MED: (module_MED_map:med_map_field_packed) map            144    2        0.0011      0.0005      141     0.0015      97     
+              MED: (module_MED_map:med_map_field_packed) copy from src  144    2        0.0002      0.0001      14      0.0002      127    
+              MED: (module_MED_map:med_map_field_packed) copy to dest   144    2        0.0001      0.0000      55      0.0001      88     
+          MED:(med_phases_post_atm) map_atm2ocn                         144    1        0.0018      0.0013      0       0.0024      136    
+            MED: (module_MED_map:med_map_field_packed)                  144    1        0.0018      0.0013      0       0.0024      136    
+              MED: (module_MED_map:med_map_field_packed) map            144    2        0.0005      0.0002      0       0.0009      15     
+              MED: (module_MED_map:med_map_field_packed) copy from src  144    2        0.0001      0.0001      20      0.0002      93     
+              MED: (module_MED_map:med_map_field_packed) copy to dest   144    2        0.0001      0.0000      0       0.0001      100    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    22       0.0024      0.0024      7       0.0025      108    
+        MED: (med_fraction_init)                                        144    1        0.0020      0.0018      93      0.0024      120    
+        MED:(med_phases_post_ice)                                       144    1        0.0015      0.0012      92      0.0017      112    
+          MED:(med_phases_post_ice) map_ice2wav                         144    1        0.0007      0.0006      9       0.0008      1      
+            MED: (module_MED_map:med_map_field_packed)                  144    1        0.0007      0.0006      9       0.0008      1      
+              MED: (module_MED_map:med_map_field_packed) map            144    1        0.0006      0.0006      9       0.0007      1      
+              MED: (module_MED_map:med_map_field_packed) copy from src  144    1        0.0000      0.0000      29      0.0000      87     
+              MED: (module_MED_map:med_map_field_packed) copy to dest   144    1        0.0000      0.0000      63      0.0000      86     
+          MED:(med_phases_post_ice) map_ice2ocn                         144    1        0.0004      0.0003      107     0.0005      56     
+            MED: (module_MED_map:med_map_field_packed)                  144    1        0.0004      0.0003      107     0.0005      56     
+              MED: (module_MED_map:med_map_field_packed) map            144    1        0.0003      0.0002      106     0.0004      56     
+              MED: (module_MED_map:med_map_field_packed) copy from src  144    1        0.0001      0.0000      0       0.0001      53     
+              MED: (module_MED_map:med_map_field_packed) copy to dest   144    1        0.0000      0.0000      121     0.0000      31     
+          MED: (med_fraction_set)                                       144    1        0.0003      0.0002      97      0.0005      112    
+            MED: (med_fraction_set) fbfrac(compocn)                     144    1        0.0003      0.0001      77      0.0005      112    
+            MED: (med_fraction_set) fbfrac(compatm)                     144    1        0.0000      0.0000      43      0.0000      49     
+        MED:(med_phases_post_wav)                                       144    1        0.0015      0.0014      74      0.0016      127    
+          MED: (module_MED_map:med_map_field_packed)                    144    2        0.0015      0.0014      74      0.0016      127    
+            MED: (module_MED_map:med_map_field_packed) map              144    1        0.0011      0.0010      99      0.0012      121    
+            MED: (module_MED_map:med_map_field_packed) copy from src    144    1        0.0002      0.0002      47      0.0002      143    
+            MED: (module_MED_map:med_map_field_packed) copy to dest     144    1        0.0001      0.0001      140     0.0002      55     
+        MED:(med_phases_ocnalb_run)                                     144    1        0.0010      0.0003      32      0.0030      0      
+          MED:(med_phases_ocnalb_init)                                  144    1        0.0003      0.0001      11      0.0005      108    
+        MED: (med_fraction_set)                                         144    1        0.0010      0.0002      126     0.0018      20     
+          MED: (med_fraction_set) fbfrac(compocn)                       144    1        0.0010      0.0002      126     0.0018      20     
+          MED: (med_fraction_set) fbfrac(compatm)                       144    1        0.0000      0.0000      47      0.0000      21     
+        calling NUOPC_GetStateMemberCount                               144    22       0.0004      0.0004      129     0.0004      18     
+        MED:(med_phases_post_ocn)                                       144    1        0.0004      0.0003      2       0.0005      99     
+          MED:(med_phases_post_ocn) map_ocn2ice                         144    1        0.0004      0.0003      2       0.0005      99     
+            MED: (module_MED_map:med_map_field_packed)                  144    1        0.0004      0.0003      2       0.0005      99     
+              MED: (module_MED_map:med_map_field_packed) map            144    1        0.0003      0.0002      2       0.0004      99     
+              MED: (module_MED_map:med_map_field_packed) copy from src  144    1        0.0001      0.0001      25      0.0001      86     
+              MED: (module_MED_map:med_map_field_packed) copy to dest   144    1        0.0000      0.0000      139     0.0001      86     
+        loop over fields                                                144    2        0.0003      0.0003      142     0.0003      42     
+        MED:(med_diag_zero)                                             144    1        0.0003      0.0000      0       0.0005      138    
+        MED:(med_phases_post_rof)                                       144    1        0.0002      0.0001      13      0.0008      141    
+          MED:(med_phases_post_rof) map_rof2ocn                         144    1        0.0002      0.0001      13      0.0008      141    
+            MED: (module_MED_map:med_map_field_packed)                  144    1        0.0002      0.0001      13      0.0008      141    
+              MED: (module_MED_map:med_map_field_packed) map            144    1        0.0002      0.0000      13      0.0007      141    
+              MED: (module_MED_map:med_map_field_packed) copy from src  144    1        0.0000      0.0000      130     0.0001      98     
+              MED: (module_MED_map:med_map_field_packed) copy to dest   144    1        0.0000      0.0000      32      0.0000      126    
+          MED:(med_phases_post_rof) map_rof2ice                         144    1        0.0000      0.0000      8       0.0000      127    
+            MED: (module_MED_map:med_map_field_packed)                  144    1        0.0000      0.0000      19      0.0000      127    
+        MED:(med_phases_profile)                                        144    1        0.0002      0.0001      87      0.0002      143    
+        deal with allocs                                                144    24       0.0000      0.0000      142     0.0000      0      
+      [ATM-TO-MED] RunPhase1                                            144    1        0.0007      0.0005      43      0.0014      105    
+      [ICE-TO-MED] RunPhase1                                            144    1        0.0007      0.0005      141     0.0014      83     
+      [WAV] IPDv01p5                                                    144    1        0.0005      0.0003      1       0.0008      59     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0000      0.0000      112     0.0000      126    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      79      0.0000      108    
+        loop over fields                                                144    1        0.0000      0.0000      142     0.0000      31     
+        deal with allocs                                                144    1        0.0000      0.0000      51      0.0000      122    
+      [WAV-TO-MED] RunPhase1                                            144    1        0.0004      0.0003      42      0.0006      141    
+      [ESM0001-TO-MED] RunPhase1                                        144    1        0.0003      0.0001      46      0.0009      133    
+      [ATM] IPDv01p5                                                    144    1        0.0002      0.0001      87      0.0006      116    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0000      0.0000      136     0.0000      70     
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      22      0.0000      57     
+        loop over fields                                                144    1        0.0000      0.0000      63      0.0000      126    
+        deal with allocs                                                144    1        0.0000      0.0000      6       0.0000      103    
+      [OCN-TO-MED] RunPhase1                                            144    1        0.0002      0.0002      43      0.0007      48     
+      [ROF-TO-MED] RunPhase1                                            144    1        0.0002      0.0002      43      0.0002      5      
+      [ICE] IPDv01p5                                                    144    1        0.0001      0.0001      34      0.0002      138    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0001      0.0001      34      0.0001      133    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      127     0.0000      36     
+        loop over fields                                                144    1        0.0000      0.0000      26      0.0000      131    
+        deal with allocs                                                144    1        0.0000      0.0000      7       0.0000      25     
+      [OCN] IPDv01p5                                                    144    1        0.0001      0.0001      26      0.0001      126    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0000      0.0000      33      0.0000      18     
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      26      0.0000      18     
+        loop over fields                                                144    1        0.0000      0.0000      112     0.0000      124    
+        deal with allocs                                                144    1        0.0000      0.0000      83      0.0000      52     
+      [ROF] IPDv01p5                                                    144    1        0.0001      0.0001      34      0.0001      18     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0000      0.0000      34      0.0000      54     
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      33      0.0000      18     
+        loop over fields                                                144    1        0.0000      0.0000      123     0.0000      118    
+        deal with allocs                                                144    1        0.0000      0.0000      105     0.0000      135    
+      [ESM0001] IPDv05p8                                                144    1        0.0000      0.0000      129     0.0000      0      
+        deal with allocs                                                144    1        0.0000      0.0000      134     0.0000      18     
+      deal with allocs                                                  144    3        0.0000      0.0000      129     0.0000      126    
+    [ESM0001] IPDv02p1                                                  144    1        4.0873      4.0863      65      4.0897      18     
+      [MED-TO-ICE] IPDv05p3                                             144    1        0.5287      0.5281      77      0.5290      24     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0014      0.0013      9       0.0014      126    
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      75      0.0001      18     
+        deal with allocs                                                144    2        0.0000      0.0000      80      0.0000      88     
+      [WAV-TO-MED] IPDv05p3                                             144    1        0.2650      0.2646      126     0.2652      52     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0011      0.0010      94      0.0012      126    
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      45      0.0001      90     
+        deal with allocs                                                144    2        0.0000      0.0000      27      0.0000      120    
+      [MED] IPDv03p1                                                    144    1        0.2422      0.2379      55      0.2536      18     
+      [ICE-TO-MED] IPDv05p3                                             144    1        0.1930      0.1926      126     0.1943      77     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0011      0.0011      22      0.0012      134    
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      44      0.0001      138    
+        deal with allocs                                                144    2        0.0000      0.0000      128     0.0000      106    
+      [MED-TO-WAV] IPDv05p3                                             144    1        0.0853      0.0841      113     0.0861      58     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0011      0.0011      94      0.0013      31     
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      76      0.0001      26     
+        deal with allocs                                                144    2        0.0000      0.0000      95      0.0000      134    
+      [ATM-TO-MED] IPDv05p3                                             144    1        0.0783      0.0763      49      0.0785      82     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0011      0.0011      24      0.0015      91     
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      25      0.0001      90     
+        deal with allocs                                                144    2        0.0000      0.0000      128     0.0000      38     
+      [MED-TO-OCN] IPDv05p3                                             144    1        0.0729      0.0728      62      0.0740      113    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0011      0.0011      94      0.0015      111    
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      51      0.0001      111    
+        deal with allocs                                                144    2        0.0000      0.0000      80      0.0000      111    
+      [OCN-TO-MED] IPDv05p3                                             144    1        0.0669      0.0665      126     0.0674      99     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0010      0.0010      22      0.0011      126    
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      10      0.0001      83     
+        deal with allocs                                                144    2        0.0000      0.0000      97      0.0000      71     
+      [MED-TO-ICE] IPDv05p2b                                            144    1        0.0651      0.0647      135     0.0665      48     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0014      0.0013      105     0.0015      66     
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      83      0.0001      90     
+        deal with allocs                                                144    2        0.0000      0.0000      34      0.0000      108    
+      [MED-TO-ICE] IPDv05p2a                                            144    1        0.0644      0.0641      74      0.0647      10     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0013      0.0013      34      0.0015      17     
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      51      0.0001      72     
+        deal with allocs                                                144    2        0.0000      0.0000      84      0.0000      82     
+      [MED-TO-ESM0001] IPDv05p1                                         144    1        0.0597      0.0548      91      0.0603      104    
+      [ICE-TO-MED] IPDv05p2b                                            144    1        0.0557      0.0555      73      0.0570      123    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0011      0.0011      24      0.0012      123    
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      51      0.0001      18     
+        deal with allocs                                                144    2        0.0000      0.0000      20      0.0000      54     
+      [MED-TO-ICE] IPDv05p1                                             144    1        0.0553      0.0549      74      0.0561      28     
+      [ICE-TO-MED] IPDv05p2a                                            144    1        0.0551      0.0549      110     0.0555      90     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0011      0.0011      58      0.0012      18     
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      33      0.0001      90     
+        deal with allocs                                                144    2        0.0000      0.0000      75      0.0000      74     
+      [WAV-TO-MED] IPDv05p2b                                            144    1        0.0534      0.0531      13      0.0538      97     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0011      0.0010      58      0.0012      126    
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      45      0.0001      90     
+        deal with allocs                                                144    2        0.0000      0.0000      76      0.0000      30     
+      [WAV-TO-MED] IPDv05p2a                                            144    1        0.0532      0.0530      109     0.0552      83     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0011      0.0010      94      0.0012      83     
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      25      0.0001      83     
+        deal with allocs                                                144    2        0.0000      0.0000      24      0.0000      94     
+      [MED-TO-WAV] IPDv05p2b                                            144    1        0.0528      0.0519      43      0.0531      57     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0011      0.0011      34      0.0013      18     
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      9       0.0001      80     
+        deal with allocs                                                144    2        0.0000      0.0000      24      0.0000      99     
+      [MED-TO-OCN] IPDv05p2b                                            144    1        0.0514      0.0500      48      0.0525      43     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0011      0.0011      95      0.0012      43     
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      11      0.0001      43     
+        deal with allocs                                                144    2        0.0000      0.0000      15      0.0000      113    
+      [MED-TO-OCN] IPDv05p1                                             144    1        0.0512      0.0506      54      0.0517      76     
+      [MED-TO-WAV] IPDv05p2a                                            144    1        0.0508      0.0501      37      0.0514      41     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0011      0.0011      33      0.0012      18     
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      47      0.0001      81     
+        deal with allocs                                                144    2        0.0000      0.0000      26      0.0000      57     
+      [ATM-TO-MED] IPDv05p2b                                            144    1        0.0507      0.0505      40      0.0520      57     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0011      0.0010      25      0.0012      83     
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      29      0.0001      83     
+        deal with allocs                                                144    2        0.0000      0.0000      130     0.0000      73     
+      [ATM-TO-MED] IPDv05p2a                                            144    1        0.0504      0.0503      128     0.0516      82     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0011      0.0010      94      0.0011      90     
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      2       0.0001      90     
+        deal with allocs                                                144    2        0.0000      0.0000      98      0.0000      42     
+      [MED-TO-OCN] IPDv05p2a                                            144    1        0.0502      0.0499      52      0.0510      37     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0011      0.0011      9       0.0012      109    
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      4       0.0001      18     
+        deal with allocs                                                144    2        0.0000      0.0000      105     0.0000      18     
+      [ICE-TO-MED] IPDv05p1                                             144    1        0.0497      0.0495      114     0.0503      89     
+      [WAV-TO-MED] IPDv05p1                                             144    1        0.0487      0.0484      135     0.0492      116    
+      [ICE] IPDv01p1                                                    144    1        0.0484      0.0479      11      0.0518      90     
+      [MED-TO-ESM0001] IPDv05p3                                         144    1        0.0483      0.0478      81      0.0489      61     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0011      0.0010      22      0.0012      116    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0001      0.0001      40      0.0001      77     
+        deal with allocs                                                144    2        0.0000      0.0000      68      0.0000      77     
+      [MED-TO-ESM0001] IPDv05p2a                                        144    1        0.0481      0.0475      129     0.0491      18     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0011      0.0011      32      0.0012      74     
+        calling NUOPC_GetStateMemberCount                               144    1        0.0001      0.0001      51      0.0001      18     
+        deal with allocs                                                144    2        0.0000      0.0000      132     0.0000      89     
+      [MED-TO-WAV] IPDv05p1                                             144    1        0.0478      0.0473      76      0.0480      95     
+      [MED-TO-ESM0001] IPDv05p2b                                        144    1        0.0477      0.0472      6       0.0480      135    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0011      0.0010      27      0.0012      121    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0001      0.0001      47      0.0001      121    
+        deal with allocs                                                144    2        0.0000      0.0000      141     0.0000      53     
+      [OCN-TO-MED] IPDv05p2b                                            144    1        0.0474      0.0473      95      0.0478      127    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0010      0.0010      76      0.0011      126    
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      29      0.0001      41     
+        deal with allocs                                                144    2        0.0000      0.0000      82      0.0000      54     
+      [ROF-TO-MED] IPDv05p3                                             144    1        0.0473      0.0469      126     0.0475      56     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0010      0.0009      32      0.0010      126    
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      47      0.0001      90     
+        deal with allocs                                                144    2        0.0000      0.0000      4       0.0000      49     
+      [OCN-TO-MED] IPDv05p2a                                            144    1        0.0471      0.0470      11      0.0482      32     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0010      0.0010      67      0.0011      32     
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      34      0.0001      90     
+        deal with allocs                                                144    2        0.0000      0.0000      87      0.0000      61     
+      [ATM-TO-MED] IPDv05p1                                             144    1        0.0468      0.0466      88      0.0469      18     
+      [ESM0001-TO-MED] IPDv05p2a                                        144    1        0.0458      0.0439      83      0.0460      65     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0009      0.0009      85      0.0010      18     
+        calling NUOPC_GetStateMemberCount                               144    1        0.0001      0.0001      10      0.0001      54     
+        deal with allocs                                                144    2        0.0000      0.0000      26      0.0000      85     
+      [OCN-TO-MED] IPDv05p1                                             144    1        0.0453      0.0452      105     0.0455      117    
+      [ROF-TO-MED] IPDv05p2b                                            144    1        0.0451      0.0449      40      0.0460      45     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0009      0.0009      94      0.0010      126    
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      44      0.0001      45     
+        deal with allocs                                                144    2        0.0000      0.0000      2       0.0000      38     
+      [ESM0001-TO-MED] IPDv05p2b                                        144    1        0.0448      0.0444      97      0.0452      118    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0009      0.0008      40      0.0010      126    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0001      0.0001      32      0.0001      18     
+        deal with allocs                                                144    2        0.0000      0.0000      3       0.0000      47     
+      [ROF-TO-MED] IPDv05p2a                                            144    1        0.0447      0.0444      19      0.0454      122    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    2        0.0009      0.0009      76      0.0010      122    
+        calling NUOPC_GetStateMemberCount                               144    2        0.0001      0.0001      32      0.0001      18     
+        deal with allocs                                                144    2        0.0000      0.0000      88      0.0000      121    
+      [ESM0001-TO-MED] IPDv05p3                                         144    1        0.0444      0.0443      59      0.0455      142    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0009      0.0009      22      0.0011      41     
+        calling NUOPC_GetStateMemberCount                               144    1        0.0001      0.0001      45      0.0001      41     
+        deal with allocs                                                144    2        0.0000      0.0000      7       0.0000      90     
+      [ESM0001-TO-MED] IPDv05p1                                         144    1        0.0437      0.0432      116     0.0445      85     
+      [ROF-TO-MED] IPDv05p1                                             144    1        0.0437      0.0433      13      0.0448      30     
+      [WAV] IPDv01p1                                                    144    1        0.0232      0.0229      9       0.0247      90     
+      [ESM0001-TO-ICE] IPDv05p3                                         144    1        0.0217      0.0211      122     0.0223      87     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0003      0.0002      0       0.0003      126    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      140     0.0000      18     
+        deal with allocs                                                144    2        0.0000      0.0000      134     0.0000      105    
+      [ESM0001-TO-ICE] IPDv05p1                                         144    1        0.0214      0.0207      37      0.0217      90     
+      [ESM0001-TO-ICE] IPDv05p2b                                        144    1        0.0214      0.0212      106     0.0223      131    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0003      0.0002      2       0.0003      131    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      68      0.0000      49     
+        deal with allocs                                                144    2        0.0000      0.0000      134     0.0000      15     
+      [ESM0001-TO-ICE] IPDv05p2a                                        144    1        0.0213      0.0204      140     0.0218      15     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0003      0.0003      54      0.0003      126    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      7       0.0000      5      
+        deal with allocs                                                144    2        0.0000      0.0000      118     0.0000      59     
+      [ICE-TO-ESM0001] IPDv05p2a                                        144    1        0.0192      0.0180      82      0.0195      110    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0002      0.0002      20      0.0002      111    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      36      0.0000      35     
+        deal with allocs                                                144    2        0.0000      0.0000      79      0.0000      18     
+      [ICE-TO-ESM0001] IPDv05p2b                                        144    1        0.0192      0.0179      57      0.0194      8      
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0002      0.0002      14      0.0002      36     
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      45      0.0000      61     
+        deal with allocs                                                144    2        0.0000      0.0000      76      0.0000      69     
+      [ICE-TO-ESM0001] IPDv05p1                                         144    1        0.0187      0.0185      126     0.0190      32     
+      [ICE-TO-ESM0001] IPDv05p3                                         144    1        0.0186      0.0185      83      0.0190      126    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0002      0.0002      24      0.0002      126    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      72      0.0000      85     
+        deal with allocs                                                144    2        0.0000      0.0000      80      0.0000      71     
+      [WAV-TO-ESM0001] IPDv05p1                                         144    1        0.0184      0.0173      30      0.0187      135    
+      [WAV-TO-ESM0001] IPDv05p2b                                        144    1        0.0180      0.0172      45      0.0182      13     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0002      0.0001      19      0.0002      138    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      71      0.0000      35     
+        deal with allocs                                                144    2        0.0000      0.0000      8       0.0000      18     
+      [WAV-TO-ESM0001] IPDv05p2a                                        144    1        0.0180      0.0172      122     0.0183      109    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0002      0.0001      10      0.0002      36     
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      0       0.0000      63     
+        deal with allocs                                                144    2        0.0000      0.0000      4       0.0000      36     
+      [WAV-TO-ESM0001] IPDv05p3                                         144    1        0.0174      0.0173      56      0.0179      126    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0002      0.0001      10      0.0002      126    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      142     0.0000      90     
+        deal with allocs                                                144    2        0.0000      0.0000      15      0.0000      18     
+      [ATM-TO-ESM0001] IPDv05p3                                         144    1        0.0169      0.0160      58      0.0189      49     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0001      0.0001      7       0.0001      41     
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      108     0.0000      51     
+        deal with allocs                                                144    2        0.0000      0.0000      139     0.0000      40     
+      [ATM-TO-ESM0001] IPDv05p2a                                        144    1        0.0163      0.0156      41      0.0164      128    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0001      0.0001      24      0.0001      112    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      108     0.0000      143    
+        deal with allocs                                                144    2        0.0000      0.0000      92      0.0000      132    
+      [ATM-TO-ESM0001] IPDv05p1                                         144    1        0.0162      0.0160      95      0.0164      88     
+      [ATM-TO-ESM0001] IPDv05p2b                                        144    1        0.0159      0.0157      57      0.0161      32     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0001      0.0001      6       0.0001      139    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      32      0.0000      138    
+        deal with allocs                                                144    2        0.0000      0.0000      74      0.0000      95     
+      [ATM] IPDv01p1                                                    144    1        0.0159      0.0131      16      0.0174      54     
+      [ESM0001-TO-OCN] IPDv05p2b                                        144    1        0.0149      0.0140      131     0.0160      95     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0001      0.0000      74      0.0001      54     
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      34      0.0000      103    
+        deal with allocs                                                144    2        0.0000      0.0000      130     0.0000      89     
+      [OCN-TO-ESM0001] IPDv05p3                                         144    1        0.0149      0.0137      77      0.0153      126    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0001      0.0001      0       0.0001      86     
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      108     0.0000      96     
+        deal with allocs                                                144    2        0.0000      0.0000      83      0.0000      1      
+      [OCN-TO-ESM0001] IPDv05p2b                                        144    1        0.0149      0.0136      123     0.0151      17     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0001      0.0001      28      0.0001      6      
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      34      0.0000      35     
+        deal with allocs                                                144    2        0.0000      0.0000      28      0.0000      54     
+      [ESM0001-TO-WAV] IPDv05p3                                         144    1        0.0145      0.0141      51      0.0146      32     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0001      0.0001      21      0.0001      113    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      45      0.0000      126    
+        deal with allocs                                                144    2        0.0000      0.0000      127     0.0000      43     
+      [OCN-TO-ESM0001] IPDv05p1                                         144    1        0.0144      0.0138      102     0.0146      33     
+      [OCN-TO-ESM0001] IPDv05p2a                                        144    1        0.0144      0.0140      90      0.0146      39     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0001      0.0001      99      0.0001      54     
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      72      0.0000      54     
+        deal with allocs                                                144    2        0.0000      0.0000      137     0.0000      5      
+      [ESM0001-TO-WAV] IPDv05p1                                         144    1        0.0142      0.0139      108     0.0147      89     
+      [ESM0001-TO-OCN] IPDv05p1                                         144    1        0.0142      0.0139      90      0.0145      3      
+      [ESM0001-TO-WAV] IPDv05p2a                                        144    1        0.0141      0.0136      52      0.0145      6      
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0001      0.0001      21      0.0001      131    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      39      0.0000      18     
+        deal with allocs                                                144    2        0.0000      0.0000      140     0.0000      52     
+      [ESM0001-TO-OCN] IPDv05p3                                         144    1        0.0140      0.0136      87      0.0148      131    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0001      0.0000      44      0.0001      131    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      84      0.0000      52     
+        deal with allocs                                                144    2        0.0000      0.0000      136     0.0000      64     
+      [ESM0001-TO-WAV] IPDv05p2b                                        144    1        0.0139      0.0136      88      0.0143      39     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0001      0.0001      0       0.0001      136    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      130     0.0000      18     
+        deal with allocs                                                144    2        0.0000      0.0000      140     0.0000      54     
+      [ESM0001-TO-OCN] IPDv05p2a                                        144    1        0.0139      0.0131      15      0.0140      141    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0001      0.0001      87      0.0001      125    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      43      0.0000      18     
+        deal with allocs                                                144    2        0.0000      0.0000      117     0.0000      19     
+      [ROF-TO-ESM0001] IPDv05p1                                         144    1        0.0132      0.0130      117     0.0135      13     
+      [ROF-TO-ESM0001] IPDv05p2b                                        144    1        0.0132      0.0128      127     0.0134      132    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0000      0.0000      20      0.0000      126    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      25      0.0000      18     
+        deal with allocs                                                144    2        0.0000      0.0000      75      0.0000      8      
+      [ROF-TO-ESM0001] IPDv05p2a                                        144    1        0.0132      0.0122      32      0.0135      19     
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0000      0.0000      87      0.0000      126    
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      142     0.0000      54     
+        deal with allocs                                                144    2        0.0000      0.0000      29      0.0000      32     
+      [ROF-TO-ESM0001] IPDv05p3                                         144    1        0.0129      0.0123      83      0.0133      126    
+        call first level NUOPC_GetStateMemberListsIntrnl                144    1        0.0000      0.0000      83      0.0000      18     
+        calling NUOPC_GetStateMemberCount                               144    1        0.0000      0.0000      39      0.0000      18     
+        deal with allocs                                                144    2        0.0000      0.0000      128     0.0000      45     
+      [ESM0001-TO-ATM] IPDv05p3                                         144    1        0.0128      0.0118      75      0.0135      122    
+        deal with allocs                                                144    2        0.0000      0.0000      137     0.0000      18     
+      [ESM0001-TO-ATM] IPDv05p1                                         144    1        0.0126      0.0118      85      0.0133      37     
+      [ESM0001-TO-ROF] IPDv05p2b                                        144    1        0.0125      0.0115      95      0.0128      110    
+        deal with allocs                                                144    2        0.0000      0.0000      14      0.0000      54     
+      [ESM0001-TO-ROF] IPDv05p1                                         144    1        0.0124      0.0121      3       0.0127      108    
+      [ESM0001-TO-ROF] IPDv05p3                                         144    1        0.0124      0.0115      131     0.0128      51     
+        deal with allocs                                                144    2        0.0000      0.0000      96      0.0000      18     
+      [ESM0001-TO-ATM] IPDv05p2a                                        144    1        0.0121      0.0119      18      0.0130      140    
+        deal with allocs                                                144    2        0.0000      0.0000      113     0.0000      49     
+      [ESM0001-TO-ATM] IPDv05p2b                                        144    1        0.0121      0.0118      90      0.0123      106    
+        deal with allocs                                                144    2        0.0000      0.0000      24      0.0000      90     
+      [ESM0001-TO-ROF] IPDv05p2a                                        144    1        0.0118      0.0117      125     0.0122      52     
+        deal with allocs                                                144    2        0.0000      0.0000      27      0.0000      7      
+      [OCN] IPDv01p1                                                    144    1        0.0110      0.0104      55      0.0125      0      
+      [ROF] IPDv01p1                                                    144    1        0.0023      0.0017      55      0.0040      0      
+      [ESM0001] IPDv05p3                                                144    1        0.0017      0.0015      128     0.0022      96     
+      [ESM0001] IPDv03p2                                                144    1        0.0013      0.0012      140     0.0014      90     
+      [ESM0001] IPDv05p2                                                144    1        0.0011      0.0001      18      0.0016      58     
+        deal with allocs                                                144    2        0.0000      0.0000      32      0.0000      70     
+      [MED] Init 0                                                      144    1        0.0006      0.0003      90      0.0027      0      
+      [ESM0001-TO-MED] Init 0                                           144    1        0.0003      0.0002      81      0.0006      48     
+      [ATM] Init 0                                                      144    1        0.0003      0.0002      24      0.0004      54     
+      [ICE] Init 0                                                      144    1        0.0002      0.0002      29      0.0003      97     
+      [ESM0001-TO-ATM] Init 0                                           144    1        0.0002      0.0002      133     0.0002      54     
+      [MED-TO-OCN] Init 0                                               144    1        0.0002      0.0002      26      0.0002      72     
+      [ROF-TO-MED] Init 0                                               144    1        0.0002      0.0002      24      0.0002      108    
+      [WAV] Init 0                                                      144    1        0.0002      0.0002      46      0.0003      80     
+      [MED-TO-ICE] Init 0                                               144    1        0.0002      0.0002      79      0.0002      18     
+      [ESM0001-TO-ICE] Init 0                                           144    1        0.0002      0.0002      135     0.0002      0      
+      [MED-TO-WAV] Init 0                                               144    1        0.0002      0.0002      34      0.0002      54     
+      [ESM0001-TO-ROF] Init 0                                           144    1        0.0002      0.0002      21      0.0002      72     
+      [ICE-TO-MED] Init 0                                               144    1        0.0002      0.0002      22      0.0002      54     
+      [ATM-TO-ESM0001] Init 0                                           144    1        0.0002      0.0002      46      0.0002      108    
+      [ATM-TO-MED] Init 0                                               144    1        0.0002      0.0002      141     0.0002      90     
+      [WAV-TO-MED] Init 0                                               144    1        0.0002      0.0002      142     0.0002      126    
+      [OCN-TO-MED] Init 0                                               144    1        0.0002      0.0002      94      0.0002      54     
+      [WAV-TO-ESM0001] Init 0                                           144    1        0.0002      0.0002      110     0.0002      0      
+      [ICE-TO-ESM0001] Init 0                                           144    1        0.0002      0.0002      26      0.0002      54     
+      [ESM0001-TO-OCN] Init 0                                           144    1        0.0002      0.0002      27      0.0002      126    
+      [ESM0001-TO-WAV] Init 0                                           144    1        0.0002      0.0002      117     0.0002      54     
+      [MED-TO-ESM0001] Init 0                                           144    1        0.0002      0.0002      79      0.0002      54     
+      [ROF-TO-ESM0001] Init 0                                           144    1        0.0002      0.0002      128     0.0002      18     
+      [OCN-TO-ESM0001] Init 0                                           144    1        0.0002      0.0002      51      0.0002      54     
+      [OCN] Init 0                                                      144    1        0.0002      0.0002      142     0.0002      90     
+      [ROF] Init 0                                                      144    1        0.0002      0.0002      137     0.0002      18     
+      [ESM0001] IPDv05p1                                                144    1        0.0000      0.0000      7       0.0000      69     
+      deal with allocs                                                  144    1        0.0000      0.0000      137     0.0000      135    
+    [ESM0001] Init 0                                                    144    1        0.0002      0.0001      128     0.0004      69     
+    [ensemble] IPDv05p3                                                 144    1        0.0000      0.0000      132     0.0000      0      
+    [ensemble] IPDv05p8                                                 144    1        0.0000      0.0000      137     0.0000      0      
+    [ensemble] IPDv05p4                                                 144    1        0.0000      0.0000      47      0.0000      54     
+    [ensemble] IPDv05p1                                                 144    1        0.0000      0.0000      135     0.0000      0      
+    [ensemble] IPDv05p2                                                 144    1        0.0000      0.0000      132     0.0000      18     
+    [ensemble] IPDv05p6                                                 144    1        0.0000      0.0000      29      0.0000      18     
+  [ensemble] FinalizePhase1                                             144    1        0.0343      0.0260      0       0.0477      17     
+    [ESM0001] FinalizePhase1                                            144    1        0.0330      0.0248      0       0.0466      33     
+      [ESM0001-TO-MED] FinalizePhase1                                   144    1        0.0005      0.0002      0       0.0010      133    
+      [MED-TO-ICE] FinalizePhase1                                       144    1        0.0002      0.0002      63      0.0002      39     
+      [ICE-TO-MED] FinalizePhase1                                       144    1        0.0002      0.0002      0       0.0002      54     
+      [MED-TO-OCN] FinalizePhase1                                       144    1        0.0002      0.0001      136     0.0002      108    
+      [ATM-TO-MED] FinalizePhase1                                       144    1        0.0002      0.0002      43      0.0002      18     
+      [WAV-TO-MED] FinalizePhase1                                       144    1        0.0002      0.0001      94      0.0002      126    
+      [OCN-TO-MED] FinalizePhase1                                       144    1        0.0002      0.0001      47      0.0002      84     
+      [MED-TO-WAV] FinalizePhase1                                       144    1        0.0002      0.0001      43      0.0002      0      
+      [ROF-TO-MED] FinalizePhase1                                       144    1        0.0001      0.0001      44      0.0002      36     
+      [ESM0001-TO-ATM] FinalizePhase1                                   144    1        0.0001      0.0001      46      0.0001      58     
+      [ESM0001-TO-ROF] FinalizePhase1                                   144    1        0.0001      0.0001      47      0.0001      58     
+      [ESM0001-TO-ICE] FinalizePhase1                                   144    1        0.0001      0.0001      43      0.0001      0      
+      [ESM0001-TO-OCN] FinalizePhase1                                   144    1        0.0001      0.0001      111     0.0001      72     
+      [ESM0001-TO-WAV] FinalizePhase1                                   144    1        0.0001      0.0001      40      0.0001      50     
+      [ATM-TO-ESM0001] FinalizePhase1                                   144    1        0.0001      0.0001      44      0.0001      0      
+      [ROF-TO-ESM0001] FinalizePhase1                                   144    1        0.0001      0.0001      44      0.0001      0      
+      [OCN-TO-ESM0001] FinalizePhase1                                   144    1        0.0001      0.0001      44      0.0001      0      
+      [MED-TO-ESM0001] FinalizePhase1                                   144    1        0.0001      0.0001      47      0.0001      54     
+      [ICE-TO-ESM0001] FinalizePhase1                                   144    1        0.0001      0.0001      47      0.0001      0      
+      [WAV-TO-ESM0001] FinalizePhase1                                   144    1        0.0001      0.0001      101     0.0001      0      
+      [WAV] FinalizePhase1                                              144    1        0.0000      0.0000      62      0.0001      44     
+      [MED] FinalizePhase1                                              144    1        0.0000      0.0000      110     0.0001      0      
+      [ATM] FinalizePhase1                                              144    1        0.0000      0.0000      122     0.0001      0      
+      [ICE] FinalizePhase1                                              144    1        0.0000      0.0000      133     0.0001      0      
+      [OCN] FinalizePhase1                                              144    1        0.0000      0.0000      122     0.0000      0      
+      [ROF] FinalizePhase1                                              144    1        0.0000      0.0000      130     0.0001      18     

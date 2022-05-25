@@ -1,0 +1,3 @@
+initfile = /glade/scratch/vcooper/cesm23iw_dtice100/run/cesm23iw_dtice100.ww3.r.2018-01-01-00000
+prestage_wind = /glade/p/cesmdata/cseg/inputdata/wav/ww3/core2_G4_wns_30min_20000601_to_05.nc
+prestage_mod_def = /glade/p/cesmdata/cseg/inputdata/wav/ww3/G4L1.mod_def.ww3.121031

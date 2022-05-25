@@ -1,0 +1,14 @@
+!----------------------------------------------------------------------------------
+! Users should add all user specific namelist changes below in the form of
+!   namelist_var = new_namelist_value
+! Note - that it does not matter what namelist group the namelist_var belongs to
+!----------------------------------------------------------------------------------
+
+! VTC: this init file is for a calm restart, also saved in the cesm23iw_dtice100/rest/ in scratch
+! initfile = '/glade/scratch/hkershaw/wwatch3v6p07/IC4M3IS0k_gx17/restart.ww3'
+! initfile = '/glade/scratch/vcooper/cesm23iw_dtice100/run/cesm23iws1tsks.ww3.r.2012-01-01-00000'
+
+initfile = '/glade/scratch/vcooper/cesm23iw_dtice100/run/cesm23iw_dtice100.ww3.r.2018-01-01-00000'
+! initfile = '/glade/scratch/vcooper/cesm23iw_ic4m1/run/cesm23iw_ic4m1.ww3.r.2018-07-01-00000'
+outfreq = 1
+

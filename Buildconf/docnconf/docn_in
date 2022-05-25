@@ -1,0 +1,10 @@
+&docn_nml
+  datamode = "som"
+  model_createmesh_fromfile = "null"
+  model_maskfile = "/glade/p/cesmdata/cseg/inputdata/share/meshes/gx1v7_151008_ESMFmesh.nc"
+  model_meshfile = "/glade/p/cesmdata/cseg/inputdata/share/meshes/gx1v7_151008_ESMFmesh.nc"
+  nx_global = 320
+  ny_global = 384
+  restfilm = "null"
+  sst_constant_value = -1.0
+/

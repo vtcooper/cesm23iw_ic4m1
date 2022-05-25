@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<file id="stream" version="2.0">
+
+  <stream_info name="rof.diatren_iaf_rx1">
+   <taxmode>cycle</taxmode>
+   <tInterpAlgo>upper</tInterpAlgo>
+   <readMode>single</readMode>
+   <mapalgo>bilinear</mapalgo>
+   <dtlimit>3.0</dtlimit>
+   <yearFirst>1948</yearFirst>
+   <yearLast>2009</yearLast>
+   <yearAlign>1</yearAlign>
+   <stream_vectors>null</stream_vectors>
+   <stream_mesh_file>/glade/p/cesmdata/cseg/inputdata/lnd/dlnd7/RX1/runoff.daitren.annual_ESMFmesh_120520.nc</stream_mesh_file>
+   <stream_lev_dimname>null</stream_lev_dimname>
+   <stream_data_files>
+      <file>/glade/p/cesmdata/cseg/inputdata/lnd/dlnd7/RX1/runoff.daitren.iaf.20120419.nc</file>
+   </stream_data_files>
+   <stream_data_variables>
+      <var>runoff Forr_rofl</var>
+   </stream_data_variables>
+   <stream_offset>0</stream_offset>
+ </stream_info>
+
+</file>

@@ -1,0 +1,87 @@
+/glade/scratch/lettier/CESMdev/cesm_nuopc/cime/scripts/create_newcase --case cesm23iws1tsks --res TL319_g17 --compset 2000_DATM%JRA_SLND_CICE_DOCN%SOM_DROF%IAF_SGLC_WW3_SESP --driver nuopc --mach cheyenne --run-unsupported --project UWAS0070 --workflow default
+
+VTC version
+/glade/u/home/vcooper/devcesm/cesm_nuopc/cime/scripts/create_newcase --case cesm23iws1tsks_bittest1 --res TL319_g17 --compset 2000_DATM%JRA_SLND_CICE_DOCN%SOM_DROF%IAF_SGLC_WW3_SESP --driver nuopc --mach cheyenne --run-unsupported --project UWAS0070 --workflow default
+
+(old notes)
+If doing a branch. w3 doesn't know how to find the refcase since it is not using rpointer files yet. 
+Instead you must by hand change the initfile in the user_nl_ww file 
+(w3 uses this variable to do an startup too so beware that you've change it)
+
+In the case directory
+
+./xmlchange NTHRDS=1  
+
+then ./case_setup
+
+./xmlchange WAV_GRID=gx17
+./xmlchange WAV_NX=320
+./xmlchange WAV_NY=384
+./xmlchange WAV_DOMAIN_FILE=domain.ocn.gx1v7.151008.nc
+./xmlchange WAV_DOMAIN_MESH=/glade/p/cesmdata/inputdata/share/meshes/gx1v7_151008_ESMFmesh.nc
+./xmlchange WAV_DOMAIN_PATH=/glade/p/cesmdata/inputdata/share/domains
+
+./xmlchange ICE2WAV_SMAPNAME=idmap
+./xmlchange OCN2WAV_SMAPNAME=idmap
+./xmlchange WAV2OCN_SMAPNAME=idmap
+./xmlchange WAV2ICE_SMAPNAME=idmap 
+
+
+./xmlchange RUN_REFDATE=0000-01-01
+./xmlchange RUN_STARTDATE=1980-01-01
+
+## VTC changes ##
+./xmlchange RUN_REFDATE=2012-01-01
+./xmlchange RUN_TYPE=branch
+./xmlchange RUN_REFCASE=cesm23iws1tsks
+#################
+
+## VTC changes for new 2018 experiment ##
+./xmlchange RUN_REFDATE=2018-01-01
+./xmlchange RUN_TYPE=branch
+./xmlchange RUN_REFCASE=cesm23iw_dtice100
+./xmlchange STOP_OPTION=nmonths
+./xmlchange STOP_N=1
+cp /glade/u/home/vcooper/cesmcases/cesm23iw_dtice100/SourceMods/src.ww3/* ./SourceMods/src.ww3/
+cp /glade/u/home/vcooper/cesmcases/cesm23iw_dtice100/user_nl_* .
+cp /glade/u/home/vcooper/cesmcases/cesm23iw_dtice100/*stream* .
+cp /glade/u/home/vcooper/cesmcases/cesm23iw_dtice100/nuopc.runseq .
+COPY RPOINTERS MANUALLY INTO RUN DIRECTORY
+#################
+
+
+./xmlchange STOP_OPTION=ndays
+./xmlchange STOP_N=15
+
+./xmlchange ATM2WAV_SMAPNAME=cpl/gridmaps/TL319/map_TL319_TO_gx1v7_blin.170705.nc
+
+./xmlchange DOUT_S=FALSE
+./xmlchange JOB_QUEUE=economy
+./xmlchange JOB_WALLCLOCK_TIME=02:00:00 --subgroup case.run
+### Note that 12 hr wall clock works for n=3 years, maybe? That was default. (VTC) 
+### Updated timing: approx 2.9 hrs wallclock / model yr with out_freq = 24 hrs.
+### And ..........: approx 4.1 hrs wallclock / model yr with out_freq =  1 hrs.
+### ..............: approx 8.2 hrs ........................................... and dtmin=10 sec.
+### ..............: approx 4.8 hrs ........................................... and dtmin=20 sec. (THIS IS THE CURRENT SETUP.)
+
+from /glade/scratch/bitz//cesm23iws1tsks/ copy
+or from /glade/u/home/vcooper/cesmcases/cesm23iws1tsks_bittest2/ which already has ww initfile set at 2012
+user_nl*
+and 
+*stream* 
+and
+nuopc.runseq
+
+qcmd -A UWAS0070 -- ./case.build 
+
+DO NOT xmlchange the following since it happens automatically and correctly:
+./xmlchange CICE_CPPDEFS=" -Dncdf -DNUMIN=11 -DNUMAX=99  -DNICECAT=5 -DNXGLOB=320 -DNYGLOB=384 -DNTRAERO=3 -DNTRISO=0 -DNBGCLYR=3 -DNICELYR=8 -DNSNWLYR=3 -DTRAGE=1 -DTRFY=1 -DTRLVL=1 -DTRPND=1 -DTRBRI=0 -DTRBGCS=0 -DBLCKX=8 -DBLCKY=6 -DMXBLCKS=10"
+ICE_NCAT=5
+SMP_PRESENT=TRUE
+SMP_VALUE=c1a1i1o1r1w1
+NINST_VALUE=c1a1i1o1r1w1
+CICE_BLCKX=8
+CICE_BLCKY=6
+CICE_MXBLCKS=10
+CICE_DECOMPTYPE=sectrobin
+

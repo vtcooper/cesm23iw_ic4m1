@@ -1,0 +1,4 @@
+model_meshfile = /glade/p/cesmdata/cseg/inputdata/share/meshes/JRA025m.170209_ESMFmesh.nc
+model_maskfile = /glade/p/cesmdata/cseg/inputdata/share/meshes/JRA025m.170209_ESMFmesh.nc
+mesh = /glade/p/cesmdata/cseg/inputdata/lnd/dlnd7/RX1/runoff.daitren.annual_ESMFmesh_120520.nc
+file1 = /glade/p/cesmdata/cseg/inputdata/lnd/dlnd7/RX1/runoff.daitren.iaf.20120419.nc

@@ -1,0 +1,111 @@
+&comp_inparm 
+
+write_ic = .false.
+
+ice_ic = 'default'
+
+histfreq = "m", "d", "x", "x", "x"
+
+histfreq_n = 1, 1, 0, 0, 0
+
+ndtd = 4
+
+r_snw = 1.6
+
+dT_mlt = 1.0
+
+rsnw_mlt = 1000.
+
+tr_fsd = .true.
+
+wave_spec_type = 'file'
+
+wave_solver = 'ml'
+
+f_aice = "mdxxx"
+
+f_hi = "mdxxx"
+
+f_afsd = "mdxxx"
+
+f_afsdn = "xxxxx"
+
+f_fsdrad = "mdxxx"
+
+f_dafsd_weld = "mdxxx"
+
+f_dafsd_wave = "mdxxx"
+
+f_dafsd_newi = "mdxxx"
+
+f_dafsd_latm = "mdxxx"
+
+f_dafsd_latg = "mdxxx"
+
+f_wave_sig_ht = "mdxxx"
+
+f_fsdperim = "mdxxx"
+
+f_sst = "mdxxx"
+
+f_wavespectrum ="mdxxx"
+
+f_uvel = 'mdxxx'
+
+f_vvel = 'mdxxx'
+
+f_daidtt = "mdxxx"
+
+f_dvidtt = "mdxxx"
+
+f_daidtd = "mdxxx"
+
+f_dvidtd = "mdxxx"
+
+f_uatm = "mdxxx"
+
+f_vatm = "mdxxx"
+
+f_uocn = "mdxxx"
+
+f_vocn = "mdxxx"
+
+f_ardgn="mdxxx"
+
+f_dardg2dt = "mdxxx"
+
+f_dardg1dt = "mdxxx"
+
+f_opening = "mdxxx"
+
+f_frzmlt = "mdxxx"
+
+f_meltl = "mhdxx"
+
+f_meltb = "mhdxx"
+
+f_meltt = "mhdxx"
+
+f_strwavx = "mdxxx"
+
+f_strwavy = "mdxxx"
+
+f_strairx = "mdxxx"
+
+f_strairy = "mdxxx"
+
+f_strocnx = "mdxxx"
+
+f_strocny = "mdxxx"
+
+f_strcorx = "mdxxx"
+
+f_strcory = "mdxxx"
+
+f_strtltx = "mdxxx"
+
+f_strtlty = "mdxxx"
+
+
+
+/ 

@@ -1,0 +1,9 @@
+&drof_nml
+  datamode = "copyall"
+  model_createmesh_fromfile = "null"
+  model_maskfile = "/glade/p/cesmdata/cseg/inputdata/share/meshes/JRA025m.170209_ESMFmesh.nc"
+  model_meshfile = "/glade/p/cesmdata/cseg/inputdata/share/meshes/JRA025m.170209_ESMFmesh.nc"
+  nx_global = 1440
+  ny_global = 720
+  restfilm = "null"
+/
